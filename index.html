@@ -1,712 +1,730 @@
 <!DOCTYPE html>
-<html lang="hu" class="scroll-smooth">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+<html lang="hu"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Szédeli Zoltán Richárd | IT Üzemeltetés &amp; Autonóm AI Fejlesztés</title>
+<meta name="description" content="Kiterjedt Microsoft felhő- (Azure) és on-premise infrastruktúra üzemeltetési tapasztalat, valamint saját autonóm AI ügynök (Agentic AI) fejlesztés.">
 
-  <title>Szédeli Zoltán Richárd | IT Üzemeltetés & Autonóm AI Fejlesztés</title>
-  <meta name="description" content="Kiterjedt Microsoft felhő- (Azure) és on-premise infrastruktúra üzemeltetési tapasztalat, valamint saját autonóm AI ügynök (Agentic AI) fejlesztés.">
-  <meta name="keywords" content="Alkalmazásüzemeltetés, Azure, NAS, IT Security, AI Agents, Hermes AI, Power BI, Szédeli Zoltán Richárd">
-  <meta name="author" content="Szédeli Zoltán Richárd">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+:root{--paper:#f6f7fa;--ink:#20242c;--muted:#616b7a;--line:#d7dde7;--accent:#80b8ff;--accent-dark:#275fc3;--mono:'Space Grotesk',sans-serif;--sans:'Manrope',sans-serif}*{box-sizing:border-box;letter-spacing:0}html{scroll-behavior:smooth;scroll-padding-top:100px}body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.75 var(--sans)}a{color:inherit;text-decoration:none}button{font:inherit;cursor:pointer}p,h1,h2,h3,h4,h5{margin:0}h1,h2,h3,h4,h5{line-height:1.2}h2{font-size:42px;font-weight:600}h3{font-size:25px}h4{font-size:24px}h5{font-size:17px}svg{width:22px;height:22px;flex-shrink:0}i{display:inline-block;width:22px;height:22px}a,button{touch-action:manipulation}a:focus-visible,button:focus-visible{outline:3px solid #3679df;outline-offset:5px}::selection{background:var(--accent);color:var(--ink)}.wrap{width:min(1220px,calc(100% - 112px));margin:auto}.header{height:88px;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:0 40px;border-bottom:1px solid var(--line);background:var(--paper);position:relative;z-index:20}.wordmark{display:flex;align-items:center;gap:14px;font-size:11px;font-weight:800}.brand-mark{font:700 27px var(--mono);display:flex;align-items:center;gap:8px}.brand-mark span{color:var(--accent-dark)}nav{display:flex;gap:26px;font-size:12px;font-weight:700}nav a{padding:8px 0;border-bottom:1px solid transparent}nav a:hover{border-color:var(--accent-dark)}.header-contact{display:flex;align-items:center;gap:16px;font-size:12px;font-weight:700}.header-contact svg{width:18px}#menu-toggle{display:none;background:none;border:1px solid var(--line);width:44px;height:44px;align-items:center;justify-content:center}.hero{position:relative;background:#171e2b;color:#fff;isolation:isolate;overflow:hidden}.hero:before{content:'';position:absolute;inset:0;z-index:-2;background:url('assets/infrastructure-hero.png') center/cover;opacity:.46;filter:grayscale(1)}.hero:after{content:'';position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(19,27,42,.95),rgba(19,27,42,.75) 60%,rgba(19,27,42,.3))}.hero-inner{padding-top:58px;padding-bottom:34px}.eyebrow{display:flex;gap:10px;align-items:center;font:12px var(--mono);color:var(--accent);margin-bottom:28px}.eyebrow svg{width:17px}h1{font:500 94px/.98 var(--mono);margin-bottom:28px;max-width:1000px}.name-dot{color:var(--accent)}.hero-subtitle{font-size:28px;max-width:780px;margin-bottom:24px;font-weight:500}.hero-subtitle span{color:var(--accent)}.intro{max-width:940px;font-size:15px;line-height:1.85;color:#e0e7f2}.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}.actions a{display:flex;align-items:center;justify-content:center;gap:12px;border:1px solid #64748c;padding:13px 21px;border-radius:2px;font-size:13px}.actions a:first-child{background:var(--accent);color:var(--ink);border-color:var(--accent);font-weight:800}.actions a:hover{transform:translateY(-2px)}.profile-strip{margin-top:30px;border-top:1px solid #53647d;padding-top:16px;display:flex;align-items:center;gap:14px}.portrait{width:42px;height:42px;position:relative;background:#293a54;overflow:hidden;border-radius:50%;flex-shrink:0}.portrait img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.portrait-monogram{display:flex;height:100%;align-items:center;justify-content:center;font:12px var(--mono)}.profile-badge>div{display:flex;align-items:center;gap:14px}.profile-badge>div>div:first-child{display:none}.profile-badge>div>div:last-child{display:flex;align-items:center;gap:14px}.profile-badge>div>div:last-child>div{display:flex;align-items:center;gap:6px;color:var(--accent);font-size:11px}.profile-badge p{font-size:12px}.profile-badge svg{width:13px}.section{padding:88px 0}.section-heading{display:grid;grid-template-columns:90px 1fr 360px;gap:24px;align-items:start;margin-bottom:50px}.section-number{font:15px var(--mono);padding-top:8px;color:var(--muted)}.section-heading>p{font-size:14px;color:var(--muted)}.focus-row{display:grid;grid-template-columns:66px 54px 1fr 1.15fr;gap:24px;align-items:start;padding:34px 0;border-top:1px solid var(--line)}.row-number{font:30px var(--mono);color:#8995a7}.focus-icon{padding-top:4px;color:var(--accent-dark)}.focus-row p{color:var(--muted);font-size:14px}.focus-row h3{font-size:27px;font-weight:500;max-width:300px}.section-projektek{background:#eaf0f8}.feature-project{position:relative;padding:42px 0 46px;border-top:1px solid #b5c4d9;border-bottom:1px solid #b5c4d9}.project-meta{display:flex;justify-content:space-between;gap:20px;font:11px var(--mono);color:var(--accent-dark)}.project-meta span:first-child{display:flex;align-items:center;gap:9px}.tags{display:flex;flex-wrap:wrap;gap:20px;font:11px var(--mono);margin:24px 0;color:#5b6e89}.feature-project>h3{font:500 42px/1.2 var(--mono);max-width:890px;margin-bottom:36px}.project-columns{display:grid;grid-template-columns:1fr 1fr;gap:48px}.project-columns p:first-child{font:12px var(--mono);color:var(--accent-dark);margin-bottom:12px}.project-columns p:last-child{font-size:14px}.project-result{margin-top:30px;border-top:1px solid #c4d0e1;padding-top:18px;font-size:14px}.project-result span,.project-result>p:first-child{display:block;font:11px var(--mono);color:var(--accent-dark);margin-bottom:8px}.project-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:38px;margin-top:42px}.project-row>div:first-child>span{display:flex;align-items:center;gap:8px;font:10px var(--mono);min-height:35px;color:var(--accent-dark)}.project-row>div:first-child>div{display:flex;gap:12px;font:11px var(--mono);color:var(--muted);margin:16px 0}.project-row h3{font-size:23px;font-weight:600;margin-bottom:20px}.project-row p{font-size:13px;color:#47566c}.project-row{display:flex;flex-direction:column;justify-content:space-between}.section-tapasztalat{background:#202733;color:#f6f7fa}.section-tapasztalat .section-heading p,.section-tapasztalat .section-number{color:#afbdd2}.timeline{margin-left:114px}.career-row{position:relative;border-top:1px solid #4a5970;padding:30px 0}.career-row:before{content:'';position:absolute;left:-40px;top:38px;width:8px;height:8px;background:var(--accent)}.career-title{display:flex;justify-content:space-between;gap:28px}.career-title h3{font-size:23px;font-weight:500}.career-title span{font:12px var(--mono);color:var(--accent);white-space:nowrap}.career-row>p:first-of-type{color:var(--accent);font-size:12px;margin:10px 0 18px}.career-row>p:last-child{color:#c7d2e2;font-size:14px;max-width:930px}.degree-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;margin-bottom:56px}.degree{border-top:2px solid var(--ink);padding-top:24px;display:flex;flex-direction:column;justify-content:space-between}.degree>div:first-child>span{font:11px var(--mono);color:var(--muted)}.degree h4{margin:16px 0 10px}.degree p{font-size:13px;color:var(--muted)}.degree>div:last-child{display:flex;justify-content:space-between;gap:10px;font-size:11px;padding-top:22px;margin-top:24px;border-top:1px solid var(--line)}.certificate-heading{font:500 23px var(--mono);margin:38px 0 20px;display:flex;align-items:center;gap:10px}.certificate-list{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0 34px}.certificate{border-top:1px solid var(--line);padding:23px 0;display:flex;gap:15px;min-width:0}.certificate>div:first-child:has(svg),.certificate>div:first-child:has(i){color:var(--accent-dark);padding-top:4px}.certificate>span,.certificate>div>span{font:10px var(--mono);color:var(--muted)}.certificate h5{margin:7px 0 12px;font-size:16px;line-height:1.4}.certificate:has(>h5){display:block}.status{font:11px var(--mono);display:flex;align-items:center;gap:6px}.status svg{width:13px;height:13px}.status.done{color:#275fc3}.status.ongoing{color:#275fc3}.status.ongoing:before{content:'';height:6px;width:6px;background:#3679df;border-radius:50%}.section-kapcsolat{background:var(--accent);padding:76px 0}.contact-content{position:relative}.contact-content>.section-number{display:block;color:var(--ink);margin-bottom:24px}.contact-content h2{font:500 64px var(--mono);margin-bottom:24px}.contact-content>p{max-width:720px;font-size:16px;margin-bottom:34px}.contact-links{display:flex;flex-wrap:wrap;gap:18px 32px}.contact-links a{display:flex;align-items:center;gap:10px;font-size:14px;border-bottom:1px solid #7ca1de;padding-bottom:10px;overflow-wrap:anywhere;min-width:0}.contact-links a:hover{border-color:var(--ink)}footer{display:flex;align-items:center;justify-content:space-between;padding-top:25px;padding-bottom:25px;font-size:11px;color:var(--muted)}footer a{display:flex;width:40px;height:40px;border:1px solid var(--line);align-items:center;justify-content:center}#preloader{display:none}body.booting #preloader{display:flex;position:fixed;inset:0;background:var(--ink);color:var(--paper);z-index:100;flex-direction:column;justify-content:space-between;padding:32px 44px;pointer-events:none;animation:boot-out .65s 1.1s cubic-bezier(.76,0,.24,1) forwards}.boot-top,.boot-bottom{display:flex;justify-content:space-between;gap:24px;font:12px var(--mono)}.boot-top>span:first-child,.boot-ticks{color:var(--accent)}.boot-center{width:min(600px,100%);margin:auto}.boot-letters{font:500 140px/1 var(--mono);display:flex;justify-content:center;overflow:hidden}.boot-letters span{animation:letter-up .7s both cubic-bezier(.2,.8,.2,1)}.boot-letters span:nth-child(2){animation-delay:.1s}.boot-letters span:nth-child(3){animation-delay:.2s}.boot-letters b{color:var(--accent);font-weight:400;animation:blink .4s step-end infinite}.boot-center p{text-align:center;font:12px var(--mono);margin-top:28px}.boot-track{height:2px;background:#3c4b63;margin-top:32px;overflow:hidden}.boot-track span{display:block;height:100%;width:100%;background:var(--accent);transform-origin:left;animation:boot-line 1.1s ease-in-out both}@keyframes boot-line{from{transform:scaleX(0)}to{transform:scaleX(1)}}@keyframes letter-up{from{transform:translateY(120%)}to{transform:translateY(0)}}@keyframes blink{50%{opacity:0}}@keyframes boot-out{to{transform:translateY(-100%);visibility:hidden}}.reveal-ready{animation:enter .65s ease both}@keyframes enter{from{opacity:.3;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+@media(min-width:1600px){.hero-inner{padding-top:64px;padding-bottom:42px}}
+@media(max-width:1100px){.header{padding:0 24px}.wordmark>span:last-child{display:none}nav{gap:18px}.wrap{width:calc(100% - 64px)}h1{font-size:76px}.section-heading{grid-template-columns:50px 1fr}.section-heading>p{grid-column:2;max-width:550px}.focus-row{grid-template-columns:44px 36px 1fr 1.2fr;gap:16px}.focus-row h3{font-size:23px}.timeline{margin-left:74px}.project-list{gap:24px}.contact-content h2{font-size:54px}}
+@media(max-width:760px){.header{height:72px;padding:0 20px}.header-contact{margin-left:auto;font-size:11px}#menu-toggle{display:flex}nav{display:none;position:absolute;top:72px;left:0;right:0;background:var(--paper);padding:20px;border-bottom:1px solid var(--line);flex-direction:column;gap:0}nav.open{display:flex}nav a{padding:13px 0}.wrap{width:calc(100% - 40px)}.hero-inner{padding-top:38px;padding-bottom:24px}h1{font-size:54px}.eyebrow{font-size:10px;align-items:flex-start;line-height:1.7;margin-bottom:24px}.hero-subtitle{font-size:24px}.intro{font-size:13px;line-height:1.85}.actions{gap:10px;margin-top:24px}.actions a{font-size:11px;padding:12px 15px}.actions svg{width:17px}.profile-strip{margin-top:24px}.section{padding:55px 0}h2{font-size:33px}.section-heading{gap:16px;grid-template-columns:28px 1fr;margin-bottom:30px}.section-heading>p{font-size:13px}.section-number{font-size:12px}.focus-row{grid-template-columns:30px 1fr;gap:16px;padding:26px 0}.focus-icon{display:none}.focus-row h3{font-size:23px;max-width:none}.focus-row p{grid-column:2;font-size:13px}.row-number{font-size:19px;padding-top:3px}.feature-project{padding:26px 0}.project-meta{font-size:10px;flex-direction:column;gap:12px}.tags{gap:9px 14px;font-size:10px}.feature-project>h3{font-size:30px}.project-columns{grid-template-columns:1fr;gap:24px}.project-list{grid-template-columns:1fr;gap:32px}.project-row{border-bottom:1px solid #b5c4d9;padding-bottom:24px}.project-row h3{font-size:24px}.timeline{margin-left:28px}.career-row:before{left:-25px}.career-title{flex-direction:column;gap:12px}.career-title h3{font-size:22px}.career-row>p:last-child{font-size:13px}.degree-list{grid-template-columns:1fr;gap:28px}.degree h4{font-size:25px}.degree>div:last-child{margin-top:0}.certificate-list{grid-template-columns:1fr 1fr;gap:0 20px}.certificate{gap:9px}.certificate>div:first-child:has(svg){display:none}.certificate h5{font-size:14px}.certificate-heading{font-size:20px;line-height:1.4}.contact-content h2{font-size:42px}.contact-content>p{font-size:14px}.contact-links{flex-direction:column;align-items:flex-start}.contact-links a{font-size:12px;max-width:100%}.boot-letters{font-size:90px}body.booting #preloader{padding:24px}.boot-top,.boot-bottom{font-size:10px}.boot-top>span:last-child{max-width:180px;text-align:right}footer{gap:20px}}
+@media(max-width:360px){h1{font-size:46px}.header-contact{font-size:10px;gap:6px}.header-contact svg{display:none}.certificate-list{grid-template-columns:1fr}}
+.hero-inner{position:relative}.profile-strip{border-top:0;gap:24px;padding:0;align-items:center}.portrait{width:160px;height:184px;border-radius:4px 42px 4px 4px;border:1px solid #9ec7ff;box-shadow:8px 8px 0 #3465a7;isolation:isolate}.portrait img{object-position:center 60%;transform:scale(1.22);transform-origin:50% 65%}.portrait-monogram{font-size:20px}.profile-badge{border-left:2px solid var(--accent);padding-left:14px}.profile-badge>div>div:last-child{display:flex;align-items:flex-start;flex-direction:column;gap:5px}.profile-badge p{font-size:13px}.hero:before{filter:grayscale(.6)}.actions a:first-child{background:#3979df;border-color:#3979df;color:#fff}.section-kapcsolat{background:#2158b8;color:#fff}.section-kapcsolat .section-number{color:#dbe9ff}.contact-links a{border-color:#84a9e8}.contact-links a:hover{border-color:white}.boot-track span{background:#73adff}
+@media(min-width:1101px){.hero-copy h1{max-width:calc(100% - 290px)}.profile-strip{position:absolute;top:64px;right:10px;width:230px;margin:0;padding:0;border:0;display:block}.portrait{width:230px;height:270px}.profile-badge{margin-top:25px}}
+@media(max-width:760px){.profile-strip{margin-top:30px;margin-bottom:10px;gap:25px}.portrait{width:128px;height:148px;border-radius:4px 32px 4px 4px;box-shadow:6px 6px 0 #3465a7}.profile-badge{padding-left:11px}.profile-badge p{font-size:11px}}
+.status.ongoing{color:#275fc3}.status.ongoing:before{background:#275fc3;width:7px;height:7px;flex:0 0 7px;border-radius:50%}.status.ongoing>span:empty{display:none}
+.given-names{white-space:nowrap}
+@media(max-width:760px){.hero-copy h1{font-size:42px}}
+@media(max-width:360px){.hero-copy h1{font-size:36px}}
+.section-heading{align-items:first baseline}.section-heading>.section-number{padding-top:0;line-height:1.2;font-variant-numeric:tabular-nums}.section-heading>h2{min-width:0}.section-heading>p{align-self:start}
+.contact-content{display:grid;grid-template-columns:90px minmax(0,1fr);column-gap:24px;align-items:first baseline}.contact-content>.section-number{padding:0;margin:0;line-height:1.2;font-variant-numeric:tabular-nums}.contact-content>h2{grid-column:2}.contact-content>p,.contact-content>.contact-links{grid-column:2}
+@media(max-width:1100px){.contact-content{grid-template-columns:50px minmax(0,1fr)}}
+@media(max-width:760px){.contact-content{grid-template-columns:28px minmax(0,1fr);column-gap:16px}.contact-content h2{font-size:33px}.contact-content>.contact-links{grid-column:1 / -1}}
+/* Reading sizes and result copy are distinct from compact metadata labels. */
+body{font-size:16px}.wordmark{font-size:12px}nav{font-size:14px}.header-contact{font-size:14px}.eyebrow{font-size:14px}.intro{font-size:17px;line-height:1.8}.actions a{font-size:15px}.section-heading>p{font-size:16px}.focus-row p,.project-columns p:last-child,.project-result,.career-row>p:last-child{font-size:16px}.project-meta,.tags,.project-row>div:first-child>div{font-size:13px}.project-columns p:first-child,.project-result span,.project-result>p:first-child{font-size:13px}.project-row>div:first-child>span{font-size:12px}.project-row p{font-size:15px}.career-title span,.career-row>p:first-of-type{font-size:14px}.degree>div:first-child>span,.degree>div:last-child{font-size:13px}.degree p{font-size:15px}.certificate>span,.certificate>div>span{font-size:12px}.certificate h5{font-size:18px}.status{font-size:13px}.contact-content>p{font-size:18px}.contact-links a{font-size:16px}footer{font-size:13px}.profile-badge p{font-size:14px}.profile-badge>div>div:last-child>div{font-size:13px}
+.feature-project .project-result>p{color:#111111;font-family:var(--sans);font-size:16px;line-height:1.8;margin-bottom:0}.feature-project .project-result>p>span{color:var(--accent-dark);font-family:var(--mono);font-size:13px;margin-bottom:10px}
+@media(min-width:761px) and (max-width:1100px){nav{gap:12px;font-size:12px}.header-contact{font-size:12px}.header{gap:16px}}
+@media(max-width:760px){nav{font-size:15px}.header-contact{font-size:12px}.eyebrow{font-size:11px}.intro{font-size:15px;line-height:1.8}.actions a{font-size:13px}.section-heading>p,.focus-row p,.career-row>p:last-child{font-size:15px}.project-meta,.tags{font-size:12px}.project-columns p:last-child,.project-row p,.feature-project .project-result>p{font-size:15px}.career-title span{font-size:13px}.certificate h5{font-size:16px}.certificate>span,.certificate>div>span{font-size:12px}.status{font-size:13px}.contact-content>p{font-size:16px}.contact-links a{font-size:14px}.profile-badge p{font-size:12px}.profile-badge>div>div:last-child>div{font-size:12px}footer{font-size:12px}}
+@media(max-width:360px){.header-contact{font-size:11px}}
+.section-tanulmanyok{background:#f0f4fa}.section-tanulmanyok .section-heading{margin-bottom:40px}.degree-list{gap:20px;margin-bottom:52px}.degree{background:#fff;border:0;border-radius:8px;padding:28px;box-shadow:0 5px 22px #263e6010;position:relative}.degree:first-child{background:#e0ebff}.degree h4{font-size:26px;margin-top:18px}.degree>div:first-child>span{color:#275fc3}.degree>div:last-child{border:0;padding-top:12px;margin-top:14px;flex-wrap:wrap}.certificate-heading{margin-top:40px;margin-bottom:22px;font-size:24px}.certificate-heading>svg{color:#275fc3}.certificate-list{gap:16px;grid-template-columns:repeat(3,minmax(0,1fr))}.certificate,.certificate:has(>h5){display:flex;align-items:flex-start;gap:16px;background:#fff;border:0;border-radius:8px;padding:22px;box-shadow:0 3px 16px #263e6009;min-height:165px}.certificate>.credential-icon,.certificate>div:first-child:has(svg),.certificate>div:first-child:has(i){display:flex;align-items:center;justify-content:center;width:42px;height:42px;flex:0 0 42px;padding:0;background:#e9f0fc;border-radius:6px;color:#275fc3}.credential-copy{min-width:0;display:flex;flex-direction:column;align-items:flex-start;align-self:stretch}.certificate h5{font-size:17px;line-height:1.45;margin-top:8px;margin-bottom:16px}.credential-copy>.status{margin-top:auto}.certificate .status.done:before{content:'✓';color:#275fc3}.certificate .status.done svg{display:none}.certificate>div>span{font-size:12px;color:#586b86;line-height:1.5}
+@media(max-width:1100px){.degree-list{gap:16px}.degree{padding:22px}.certificate-list{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:760px){.degree-list{grid-template-columns:1fr;gap:16px;margin-bottom:36px}.degree{padding:24px}.degree h4{font-size:25px}.certificate-list{grid-template-columns:1fr;gap:12px}.certificate{padding:20px;min-height:132px}.certificate h5{font-size:17px}.certificate-heading{font-size:22px;margin-top:32px}.certificate>.credential-icon,.certificate>div:first-child:has(svg){display:flex}.section-tanulmanyok .section-heading{margin-bottom:28px}}
+.degree:first-child{background:#fff}.degree.in-progress,.certificate.in-progress{background:#e0ebff}.certificate.in-progress .credential-icon{background:#d0e1ff}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}body.booting #preloader{display:none}}
 
-  <!-- FAVICON: Beágyazott Data URI SVG a biztos megjelenésért -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64' fill='none'%3E%3Crect width='64' height='64' rx='16' fill='%23070B14'/%3E%3Crect x='0.5' y='0.5' width='63' height='63' rx='15.5' stroke='%231E2F56' stroke-width='1'/%3E%3Cpath d='M20 44L32 20L44 44L20 44Z' stroke='%2338BDF8' stroke-width='2.5' stroke-linejoin='round'/%3E%3Cpath d='M32 20V34M20 44L32 34M44 44L32 34' stroke='%231E2F56' stroke-width='1.5' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='34' r='3.5' fill='%2338BDF8'/%3E%3Ccircle cx='32' cy='20' r='3.5' fill='%2310B981'/%3E%3Ccircle cx='20' cy='44' r='3' fill='%2338BDF8'/%3E%3Ccircle cx='44' cy='44' r='3' fill='%2310B981'/%3E%3C/svg%3E">
+</style>
 
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://szedelizoltan.hu/">
-  <meta property="og:title" content="Szédeli Zoltán Richárd | IT Üzemeltetés & Autonóm AI Fejlesztés">
-  <meta property="og:description" content="Stabil nagyvállalati Azure üzemeltetés és önálló intelligens munkafolyamat-automatizáció.">
+<style>
+.demo-launch{display:inline-flex;align-items:center;gap:10px;margin-top:30px;border:0;border-radius:5px;padding:14px 22px;background:#275fc3;color:#fff;font-weight:700;font-size:15px}.demo-launch:hover{background:#1e4eaa}#hermes-demo{width:min(1080px,calc(100% - 40px));max-height:calc(100dvh - 48px);padding:0;border:1px solid #d7dde7;border-radius:8px;color:#20242c;background:#f6f7fa;box-shadow:0 30px 90px #0005;overflow:auto}#hermes-demo::backdrop{background:#101927b8;backdrop-filter:blur(5px)}body.demo-open{overflow:hidden}.demo-header{padding:24px 30px 16px;display:flex;justify-content:space-between;align-items:center;background:#fff}.demo-label{font:11px var(--mono);color:#275fc3}.demo-header h2{font-size:30px;margin-top:7px}.demo-icon{width:42px;height:42px;display:flex;justify-content:center;align-items:center;border:1px solid #d7dde7;background:#fff;border-radius:5px}.demo-disclaimer{font-size:12px;color:#53627a;background:#eaf0f8;padding:12px 30px}.demo-tabs{display:flex;padding:0 30px;background:#fff;gap:26px;border-bottom:1px solid #d7dde7}.demo-tabs button{border:0;border-bottom:3px solid transparent;padding:18px 0;background:none;color:#616b7a;font-size:14px}.demo-tabs button[aria-selected=true]{border-color:#275fc3;color:#275fc3;font-weight:700}.demo-overview{padding:25px 30px;display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:24px;align-items:center}.demo-overview h3{font-size:23px;margin:7px 0 10px}.demo-overview p{font-size:14px;color:#53627a}.demo-selector label{display:block;font-size:12px;margin-bottom:8px}.demo-selector select{width:100%;font:13px var(--sans);color:#20242c;background:#fff;border:1px solid #c4d0e1;padding:12px;border-radius:5px}.demo-workspace{margin:0 30px;display:grid;grid-template-columns:230px minmax(0,1fr);border:1px solid #d7dde7;border-radius:6px;background:#fff;overflow:hidden}.demo-workspace aside{padding:22px;background:#edf2f9;border-right:1px solid #d7dde7}.demo-workspace h4{font-size:14px}.demo-workspace ol{list-style:none;padding:0;margin:20px 0}.demo-workspace li{font-size:12px;display:flex;gap:10px;align-items:center;padding:10px 0;color:#65738a}.demo-workspace li span{width:23px;height:23px;border-radius:50%;display:flex;align-items:center;justify-content:center;background:#dce5f2;flex-shrink:0;font:11px var(--mono)}.demo-workspace li.active{color:#275fc3;font-weight:700}.demo-workspace li.active span{background:#275fc3;color:#fff}.demo-rule{border-top:1px solid #c4d0e1;padding-top:16px;color:#53627a}.demo-rule svg{color:#275fc3;width:20px;margin-bottom:8px}.demo-rule p{font-size:12px}.demo-conversation{min-width:0;display:flex;flex-direction:column}.demo-conversation-head{display:flex;justify-content:space-between;gap:15px;padding:15px 20px;border-bottom:1px solid #e4e9f0;font:12px var(--mono)}#demo-messages{padding:20px;min-height:230px;max-height:320px;overflow:auto;display:flex;flex-direction:column;gap:14px}.demo-message{max-width:94%;padding:14px 16px;border-radius:6px;background:#f0f3f8;align-self:flex-start}.demo-message.user{background:#e0ebff;align-self:flex-end}.demo-message strong{font-size:11px;color:#275fc3;display:block;margin-bottom:6px}.demo-message p{font-size:14px;line-height:1.65}.demo-controls{padding:16px 20px;border-top:1px solid #e4e9f0;margin-top:auto}.demo-controls>p{font-size:12px;color:#53627a;margin-bottom:12px}#demo-actions{display:flex;flex-wrap:wrap;gap:8px}#demo-actions button{border:1px solid #c4d0e1;background:white;border-radius:4px;padding:10px 13px;color:#20242c;font-size:12px;display:flex;align-items:center;gap:7px}#demo-actions button.primary{background:#275fc3;border-color:#275fc3;color:#fff}#demo-actions svg{width:15px;height:15px}.demo-capabilities{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px;padding:25px 30px}.demo-capabilities h4{font-size:13px;margin-bottom:8px}.demo-capabilities p{font-size:12px;line-height:1.7;color:#53627a}@media(max-width:760px){#hermes-demo{width:calc(100% - 16px);max-height:calc(100dvh - 16px)}.demo-header{padding:18px}.demo-disclaimer{padding:12px 18px}.demo-tabs{padding:0 18px;gap:18px}.demo-tabs button{font-size:12px}.demo-overview{padding:20px 18px;grid-template-columns:1fr;gap:16px}.demo-workspace{margin:0 18px;grid-template-columns:1fr}.demo-workspace aside{border-right:0;border-bottom:1px solid #d7dde7;padding:16px}.demo-workspace ol{display:flex;flex-wrap:wrap;gap:4px 12px;margin:12px 0 0}.demo-workspace li{padding:5px 0;font-size:11px}.demo-rule{display:none}.demo-capabilities{grid-template-columns:1fr;padding:20px 18px;gap:16px}#demo-messages{min-height:220px;max-height:300px;padding:14px}.demo-message{max-width:100%}.demo-message p{font-size:13px}.demo-conversation-head{font-size:11px}.demo-controls{padding:14px}}
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://unpkg.com/lucide@latest"></script>
-  
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Szédeli Zoltán Richárd",
-    "jobTitle": "Alkalmazásüzemeltető & AI Fejlesztő",
-    "url": "https://szedelizoltan.hu",
-    "sameAs": [
-      "https://www.linkedin.com/in/szédeli-zoltán-richárd-37562a214"
-    ],
-    "knowsAbout": ["IT Üzemeltetés", "Azure", "NAS", "Agentic AI", "Power BI", "Systems Engineering"]
-  }
-  </script>
+</style>
 
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: { sans: ['Inter', 'sans-serif'] },
-          colors: {
-            brand: {
-              950: '#070B14',
-              900: '#0D1527',
-              800: '#16223F',
-              700: '#1E2F56',
-              accent: '#0EA5E9',
-              emerald: '#10B981',
-            }
-          }
-        }
-      }
-    }
-  </script>
-  <style>
-    .glass-card {
-      background: rgba(19, 30, 56, 0.6);
-      backdrop-filter: blur(12px);
-      border: 1px solid rgba(255, 255, 255, 0.08);
-    }
-    .glass-card:hover {
-      border-color: rgba(14, 165, 233, 0.35);
-    }
-    .fade-out {
-      opacity: 0;
-      visibility: hidden;
-      transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1), visibility 0.6s ease-out;
-    }
-  </style>
-</head>
-<body class="bg-brand-950 text-slate-200 font-sans antialiased selection:bg-brand-accent selection:text-white overflow-x-hidden overflow-y-hidden" id="app-body">
+<style>
+#hermes-demo{width:min(780px,calc(100% - 32px))}.demo-header{position:sticky;top:0;z-index:1}.demo-disclaimer{border-bottom:1px solid #d7dde7}.demo-chat{background:white}.demo-conversation-head{align-items:center;font:14px var(--mono);color:#275fc3}.demo-conversation-head>span{min-width:0;overflow-wrap:anywhere}#demo-messages{min-height:260px;max-height:42dvh}.demo-message.agent-answer{border-left:3px solid #275fc3;background:#f4f7fc}.demo-message p{white-space:pre-line;overflow-wrap:anywhere;font-size:15px}.demo-message strong{color:#275fc3}.demo-controls>p:empty{display:none}#demo-input{display:flex;align-items:center;gap:10px}#demo-question{flex:1;min-width:0;border:1px solid #c4d0e1;border-radius:6px;padding:14px;font:16px var(--sans);color:#20242c;background:#f6f7fa}#demo-question:focus-visible{outline:2px solid #275fc3;outline-offset:2px}#demo-input button{display:flex;align-items:center;justify-content:center;width:48px;height:48px;flex:0 0 48px;border:0;border-radius:6px;background:#275fc3;color:white}#demo-input button:disabled{opacity:.5;cursor:wait}@media(max-width:760px){#hermes-demo{width:calc(100% - 16px)}#demo-messages{min-height:180px;max-height:40dvh}.demo-message p{font-size:14px}.demo-header h2{font-size:26px}}
+#hermes-demo .demo-header{gap:16px;padding:24px}#hermes-demo .demo-label{letter-spacing:.08em}#demo-close{font-size:28px;line-height:1;flex-shrink:0}.demo-dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:#275fc3;margin-right:5px}.demo-restart{border:1px solid #d7dde7;border-radius:6px;background:white;color:#53627a;padding:8px 12px;font:12px var(--sans);white-space:nowrap}.demo-progress{list-style:none;display:flex;gap:8px;margin:0;padding:16px 20px 8px;background:white}.demo-progress li{flex:1;padding:8px 4px;border-bottom:2px solid #e4e9f0;color:#718096;font-size:12px;text-align:center}.demo-progress li[aria-current=step]{border-color:#275fc3;color:#275fc3;font-weight:700}.demo-examples{padding:12px 20px 4px}.demo-examples[hidden]{display:none}.demo-examples p{font-size:12px;color:#616b7a;margin-bottom:10px}.demo-examples>div,.demo-quick-replies{display:flex;flex-wrap:wrap;gap:8px}.demo-examples button,.demo-quick-replies button{border:1px solid #c4d0e1;border-radius:6px;padding:9px 12px;background:white;color:#275fc3;font:12px var(--sans);text-align:left}.demo-examples button:hover,.demo-quick-replies button:hover,.demo-restart:hover{background:#edf3fd;border-color:#275fc3}.demo-quick-replies{padding:0 20px 16px}.demo-quick-replies:empty{display:none}.demo-quick-replies button.primary{background:#275fc3;color:white;border-color:#275fc3}.demo-quick-replies button:disabled{opacity:.55;cursor:wait}.demo-ticket{padding:18px;border:1px solid #b5cfed;border-radius:8px;background:#eef5ff}.demo-ticket strong{display:block;font-size:14px;color:#275fc3}.demo-ticket p{font-size:13px;white-space:pre-line;overflow-wrap:anywhere;margin:10px 0}.demo-ticket small{font-size:11px;line-height:1.6;color:#53627a;display:block}.demo-hint{font-size:11px!important;margin:10px 0 0!important;color:#718096!important}#demo-input button{font-size:26px}#hermes-demo button:focus-visible{outline:3px solid #275fc3;outline-offset:3px}@media(max-width:760px){#hermes-demo .demo-header{padding:18px}#hermes-demo .demo-header h2{font-size:23px}.demo-progress{padding:12px 14px 8px;gap:4px}.demo-progress li{font-size:11px}.demo-examples{padding:12px 14px 4px}.demo-quick-replies{padding:0 14px 14px}.demo-conversation-head{padding:12px 14px}.demo-message{max-width:100%}}
+#hermes-demo[open]{display:flex;flex-direction:column;height:min(780px,calc(100dvh - 48px));overflow:hidden}#hermes-demo .demo-header{position:relative;flex-shrink:0}#hermes-demo .demo-disclaimer{flex-shrink:0}#hermes-demo .demo-chat{display:flex;flex-direction:column;flex:1;min-height:0;overflow:hidden}#hermes-demo .demo-conversation-head,#hermes-demo .demo-progress,#hermes-demo .demo-examples,#hermes-demo .demo-quick-replies,#hermes-demo .demo-controls{flex-shrink:0}#hermes-demo #demo-messages{flex:1;min-height:90px;max-height:none;overscroll-behavior:contain}#hermes-demo .demo-controls{margin-top:0}@media(max-width:760px){#hermes-demo[open]{height:calc(100dvh - 16px)}#hermes-demo .demo-header{padding:14px 18px}#hermes-demo .demo-disclaimer{padding:8px 18px}.demo-quick-replies{padding-bottom:10px}.demo-examples button,.demo-quick-replies button{padding:8px 10px}}
 
-  <!-- PRELOADER -->
-  <div id="preloader" class="fixed inset-0 z-[100] flex flex-col items-center justify-center bg-brand-950 select-none">
-    <div class="relative flex flex-col items-center">
-      <div class="relative w-14 h-14 flex items-center justify-center mb-6">
-        <div class="absolute inset-0 rounded-full border border-sky-500/25 animate-ping"></div>
-        <div class="absolute inset-1 rounded-full border border-emerald-500/35 animate-pulse"></div>
-        <div class="w-3 h-3 rounded-full bg-gradient-to-r from-sky-400 to-emerald-400 shadow-lg shadow-sky-500/50"></div>
-      </div>
-      <span class="text-sm font-mono font-medium tracking-widest text-slate-400 uppercase">System Initializing</span>
-      <p class="text-xs text-slate-500 font-mono mt-2">Azure Cloud & AI Automation Framework</p>
-    </div>
-  </div>
+</style>
+<script defer src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js"></script>
 
-  <div id="main-content" class="opacity-0 transition-opacity duration-700 ease-out">
+<style>
+.career-calendar {
+  --career-copy-width: 330px;
+  --career-gap: 28px;
+  border: 1px solid #425069;
+  border-radius: 16px;
+  background: #263040;
+  overflow: hidden;
+}
+.career-calendar-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+  padding: 22px 28px;
+  border-bottom: 1px solid #425069;
+  color: #b5c5dd;
+  font-size: 13px;
+}
+.career-calendar-heading strong { color: #f3f7fd; font-weight: 500; }
+.career-calendar-axis {
+  position: relative;
+  height: 46px;
+  margin: 0 calc(46px + var(--career-gap)) 0 calc(var(--career-copy-width) + var(--career-gap) + 28px);
+  color: #a9bdd9;
+  font: 12px var(--mono);
+}
+.career-calendar-axis span { position: absolute; top: 16px; transform: translateX(-50%); }
+.career-event { border-top: 1px solid #425069; }
+.career-event summary {
+  position: relative;
+  display: grid;
+  grid-template-columns: var(--career-copy-width) minmax(0, 1fr) 18px;
+  gap: var(--career-gap);
+  align-items: center;
+  padding: 24px 28px;
+  cursor: pointer;
+  list-style: none;
+  transition: background .18s ease;
+}
+.career-event summary::-webkit-details-marker { display: none; }
+.career-event summary:hover, .career-event[open] summary { background: #303e53; }
+.career-event summary:focus-visible { outline: 2px solid #80b8ff; outline-offset: -4px; }
+.career-summary-copy { display: flex; flex-direction: column; gap: 7px; min-width: 0; }
+.career-position { font-size: 19px; line-height: 1.35; font-weight: 500; color: #f6f9ff; }
+.career-company { color: #c1cee0; font-size: 13px; }
+.career-period { color: #93c2ff; font: 12px var(--mono); }
+.career-lane { display: block; position: relative; height: 52px; }
+.career-grid-line { position: absolute; width: 1px; height: 100%; background: #b5c5dd18; top: 0; }
+.career-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 12px;
+  left: var(--career-start);
+  width: var(--career-length);
+  height: 28px;
+  border: 1px solid #8ebdf4;
+  border-radius: 7px;
+  background: linear-gradient(110deg, #3263a2, #6f9cd3);
+  box-shadow: 0 4px 14px #0002;
+}
+.career-event[data-career-current] .career-bar { background: #97c5ff; border-color: #b9d8ff; }
+.career-bar::before, .career-bar::after { content: ''; position: absolute; width: 5px; height: 5px; border-radius: 50%; background: #f0f7ff; }
+.career-bar::before { left: 6px; }
+.career-bar::after { right: 6px; }
+.career-chevron { font-size: 22px; color: #95c2fb; line-height: 1; transition: transform .2s ease; }
+.career-event[open] .career-chevron { transform: rotate(180deg); }
+.career-description { padding: 8px 28px 28px; animation: career-open .22s ease; }
+.career-description h3 { font: 12px var(--mono); color: #97c5ff; margin: 0 0 12px; }
+.career-description p { font-size: 16px; line-height: 1.85; color: #d1dcec; max-width: 930px; }
+.career-current-label { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; color: #b6e1cc; margin-left: 8px; }
+.career-current-label::before { content: ''; width: 5px; height: 5px; background: #b6e1cc; border-radius: 50%; }
+@keyframes career-open { from { opacity: .4; transform: translateY(-5px); } to { opacity: 1; transform: none; } }
+@media (max-width: 1100px) and (min-width: 761px) {
+  .career-calendar { --career-copy-width: 265px; --career-gap: 20px; }
+  .career-position { font-size: 17px; }
+}
+@media (max-width: 760px) {
+  .career-calendar { border-radius: 12px; }
+  .career-calendar-heading { padding: 18px; font-size: 12px; }
+  .career-calendar-axis { margin: 0 48px 0 18px; font-size: 10px; height: 38px; }
+  .career-calendar-axis span { top: 12px; }
+  .career-event summary { grid-template-columns: minmax(0, 1fr) 16px; gap: 14px; padding: 20px 18px 12px; }
+  .career-summary-copy { grid-column: 1; }
+  .career-chevron { grid-column: 2; grid-row: 1; align-self: start; }
+  .career-lane { grid-column: 1; grid-row: 2; height: 38px; }
+  .career-bar { top: 7px; height: 24px; }
+  .career-position { font-size: 18px; }
+  .career-description { padding: 8px 18px 24px; }
+  .career-description p { font-size: 15px; line-height: 1.8; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .career-description { animation: none; }
+  .career-event summary, .career-chevron { transition: none; }
+}
 
-    <!-- Navigáció -->
-    <header class="fixed top-0 inset-x-0 z-50 bg-brand-950/80 backdrop-blur-md border-b border-slate-800/80">
-      <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#" class="font-bold tracking-tight text-white flex items-center gap-2 text-lg">
-          <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span>
-          SZÉDELI ZOLTÁN
-        </a>
-        <nav class="hidden md:flex items-center gap-8 text-base font-medium text-slate-400">
-          <a href="#fokusz" class="hover:text-white transition-colors">Fókusz</a>
-          <a href="#projektek" class="hover:text-white transition-colors">Szakmai Sikerek</a>
-          <a href="#tapasztalat" class="hover:text-white transition-colors">Karrierút</a>
-          <a href="#tanulmanyok" class="hover:text-white transition-colors">Képesítések</a>
-          <a href="#kapcsolat" class="hover:text-white transition-colors">Kapcsolat</a>
-        </nav>
-        <a href="mailto:zoltan.richard.szedeli@gmail.com" class="text-sm font-semibold px-4 py-2 rounded-lg bg-brand-accent/15 text-brand-accent border border-brand-accent/30 hover:bg-brand-accent hover:text-white transition-all">
-          Kapcsolatfelvétel
-        </a>
-      </div>
-    </header>
+</style>
 
-    <!-- Hero Szekció -->
-    <section class="relative pt-32 pb-20 overflow-hidden">
-      <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[600px] h-[350px] bg-brand-accent/15 rounded-full blur-[120px] pointer-events-none"></div>
-
-      <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-12 gap-12 items-center">
-        <div class="md:col-span-7 space-y-6">
-          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-sm font-medium text-slate-300">
-            <i data-lucide="server" class="w-4 h-4 text-brand-accent"></i>
-            Azure Cloud • IT Üzemeltetés • Autonóm AI R&D
+</head><body>
+<div id="preloader" aria-hidden="true"><div class="boot-top"><span>SZR</span><span>Azure Cloud &amp; AI Automation Framework</span></div><div class="boot-center"><div class="boot-letters"><span>S</span><span>Z</span><span>R</span><b>_</b></div><p>System Initializing</p><div class="boot-track"><span></span></div></div><div class="boot-bottom"><span>Szédeli Zoltán Richárd</span><span class="boot-ticks" aria-hidden="true">▎▎▎▎▎▎▎▎▎▎</span></div></div>
+<header class="header"><a class="wordmark" href="#bemutatkozas" aria-label="Szédeli Zoltán"><span class="brand-mark">SZR<span>↗</span></span><span>SZÉDELI ZOLTÁN</span></a><nav id="navigation" aria-label="Fő navigáció"><a href="#fokusz">Fókusz</a><a href="#projektek">Szakmai Sikerek</a><a href="#tapasztalat">Karrierút</a><a href="#tanulmanyok">Képesítések</a><a href="#kapcsolat">Kapcsolat</a></nav><a class="header-contact" href="mailto:zoltan.richard.szedeli@gmail.com">Kapcsolatfelvétel <i data-lucide="arrow-up-right"></i></a><button id="menu-toggle" aria-label="Menü megnyitása" aria-expanded="false" aria-controls="navigation"><i data-lucide="menu"></i></button></header>
+<main><section class="hero" id="bemutatkozas"><div class="wrap hero-inner">
+        <div class="hero-copy">
+          <div class="eyebrow">
+            <i data-lucide="server"></i>
+            Azure Cloud • IT Üzemeltetés • Autonóm AI R&amp;D
           </div>
-          <h1 class="text-5xl sm:text-6xl font-extrabold tracking-tight text-white leading-tight">
-            Felhőalapú üzemeltetés és <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-emerald-400">autonóm AI</span> fejlesztés.
-          </h1>
-          <p class="text-slate-400 text-lg leading-relaxed">
+          <h1>Szédeli<br><span class="given-names">Zoltán Richárd<span class="name-dot" aria-hidden="true">.</span></span></h1><h2 class="hero-subtitle">
+            Felhőalapú üzemeltetés és <span>autonóm AI</span> fejlesztés.
+          </h2>
+          <p class="intro">
             Kiterjedt Microsoft felhő- (Azure) és on-premise infrastruktúra üzemeltetési tapasztalattal rendelkező szakember vagyok. A klasszikus rendszerszervezői és üzemeltetői munkám mellett saját, autonóm AI ügynököket (Agentic AI) tervezek és építek a manuális munkafolyamatok automatizálására. Célom a nagyvállalati IT rendszerek stabil, biztonságos üzemeltetése, kiegészítve az általam fejlesztett intelligens, folyamatoptimalizáló megoldásokkal.
           </p>
-          <div class="flex flex-wrap items-center gap-4 pt-2">
-            <a href="#kapcsolat" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-white text-brand-950 font-semibold text-base hover:bg-slate-200 transition-all shadow-sm">
-              <i data-lucide="mail" class="w-5 h-5"></i> Egyeztetés kezdeményezése
+          <div class="actions">
+            <a href="#kapcsolat">
+              <i data-lucide="mail"></i> Egyeztetés kezdeményezése
             </a>
-            <a href="CV/Szedeli_Zoltan_CV.pdf" download="Szedeli_Zoltan_CV.pdf" class="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 font-semibold text-base hover:bg-slate-800 transition-all">
-              <i data-lucide="file-text" class="w-5 h-5"></i> CV letöltése (PDF)
+            <a href="CV/Szedeli_Zoltan_CV.pdf" download="Szedeli_Zoltan_CV.pdf">
+              <i data-lucide="file-text"></i> CV letöltése (PDF)
             </a>
           </div>
         </div>
 
-        <!-- Profilkép és Lebegő Jelvény -->
-        <div class="md:col-span-5 relative flex justify-center">
-          <div class="relative w-64 h-64 sm:w-72 sm:h-72 rounded-3xl overflow-hidden border-2 border-slate-800 bg-slate-900/60 shadow-2xl">
-            <img src="CV/profile.jpg" onerror="this.onerror=null; this.src='profile.jpg';" alt="Szédeli Zoltán Richárd" class="w-full h-full object-cover" fetchpriority="high" decoding="async">
-            <div class="absolute inset-0 bg-gradient-to-t from-brand-950 via-transparent to-transparent"></div>
-          </div>
+        
+        <div class="profile-strip">
+          <div class="portrait"><span class="portrait-monogram" aria-hidden="true">SZR</span><img src="CV/profile.jpg" alt="Szédeli Zoltán Richárd" fetchpriority="high" decoding="async" onerror="this.hidden=true" loading="lazy"></div>
 
-          <!-- IBM AI Lebegő kártya -->
-          <div class="absolute -bottom-4 -right-2 glass-card p-4 rounded-2xl shadow-xl max-w-[250px]">
-            <div class="flex items-center gap-3">
-              <div class="p-2.5 rounded-lg bg-sky-500/15 text-sky-400">
-                <i data-lucide="cpu" class="w-5 h-5"></i>
+          <div class="profile-badge">
+            <div>
+              <div>
+                <i data-lucide="cpu"></i>
               </div>
               <div>
-                <div class="flex items-center gap-1.5 mb-0.5">
-                  <i data-lucide="check-circle-2" class="w-3.5 h-3.5 text-sky-400"></i>
-                  <p class="text-[11px] font-bold uppercase tracking-widest text-sky-400">Elvégezve</p>
+                <div>
+                  <i data-lucide="check-circle-2"></i>
+                  <p>Elvégezve</p>
                 </div>
-                <p class="text-sm font-bold text-white leading-snug">IBM AI Intro (AI)</p>
+                <p>IBM AI Intro (AI)</p>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <!-- Fókuszterületek -->
-    <section id="fokusz" class="py-20 border-t border-slate-800/60">
-      <div class="max-w-6xl mx-auto px-6">
-        <div class="text-center max-w-2xl mx-auto mb-14">
-          <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Kiemelt Értékterületek</h2>
-          <p class="text-slate-400 text-base mt-3">Rendszerszintű megközelítés a hibrid üzemeltetés, az adatvezérlés és az AI fejlesztés terén.</p>
+      </div></section>
+<section id="fokusz" class="section section-fokusz">
+      <div class="wrap">
+        <div class="section-heading"><span class="section-number" aria-hidden="true">01</span>
+          <h2>Kiemelt Értékterületek</h2>
+          <p>Rendszerszintű megközelítés a hibrid üzemeltetés, az adatvezérlés és az AI fejlesztés terén.</p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="glass-card p-6 sm:p-8 rounded-2xl transition-all">
-            <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center mb-5">
-              <i data-lucide="cloud" class="w-6 h-6"></i>
+        <div class="focus-list">
+          <div class="focus-row"><span class="row-number" aria-hidden="true">01</span>
+            <div class="focus-icon">
+              <i data-lucide="cloud"></i>
             </div>
-            <h3 class="text-lg font-bold text-white mb-2.5">Cloud & Infr. Üzemeltetés</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">
+            <h3>Cloud &amp; Infr. Üzemeltetés</h3>
+            <p>
               Microsoft Azure és on-premise (NAS) infrastruktúrák felügyelete. Országos szoftverfrissítések menedzselése, biztonságos release-ek és automatizált (Backup/DR) mentések biztosítása.
             </p>
           </div>
 
-          <div class="glass-card p-6 sm:p-8 rounded-2xl transition-all">
-            <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center mb-5">
-              <i data-lucide="bot" class="w-6 h-6"></i>
+          <div class="focus-row"><span class="row-number" aria-hidden="true">02</span>
+            <div class="focus-icon">
+              <i data-lucide="bot"></i>
             </div>
-            <h3 class="text-lg font-bold text-white mb-2.5">AI R&D & Automatizáció</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">
+            <h3>AI R&amp;D &amp; Automatizáció</h3>
+            <p>
               Saját tervezésű autonóm ügynökök (AI Agents) és LLM-alapú intelligens asszisztensek fejlesztése. Repetitív feladatok és napi manuális rutinok intelligens munkafolyamatokká alakítása.
             </p>
           </div>
 
-          <div class="glass-card p-6 sm:p-8 rounded-2xl transition-all">
-            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-5">
-              <i data-lucide="git-merge" class="w-6 h-6"></i>
+          <div class="focus-row"><span class="row-number" aria-hidden="true">03</span>
+            <div class="focus-icon">
+              <i data-lucide="git-merge"></i>
             </div>
-            <h3 class="text-lg font-bold text-white mb-2.5">Rendszerszervezés & Adat</h3>
-            <p class="text-slate-400 text-sm leading-relaxed">
+            <h3>Rendszerszervezés &amp; Adat</h3>
+            <p>
               Precíz hídépítés az IT és az üzlet között. Üzleti igények (BRD) agilis specifikálása (User Story-k), valamint Power BI és SQL alapú proaktív adatvizualizáció a menedzsment számára.
             </p>
           </div>
         </div>
       </div>
     </section>
-
-    <!-- Szakmai Sikerek -->
-    <section id="projektek" class="py-20 border-t border-slate-800/60 bg-gradient-to-b from-brand-950 via-brand-900/30 to-brand-950">
-      <div class="max-w-6xl mx-auto px-6">
+<section id="projektek" class="section section-projektek">
+      <div class="wrap">
         
-        <!-- Szekció Cím -->
-        <div class="text-center max-w-2xl mx-auto mb-14">
-          <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Szakmai Sikereim</h2>
-          <p class="text-slate-400 text-base mt-3">
+        <div class="section-heading"><span class="section-number" aria-hidden="true">02</span>
+          <h2>Szakmai Sikereim</h2>
+          <p>
             Gyakorlati tapasztalatok a biztonság, az adatvezérlés<br>
             és az autonóm AI rendszerek területén.
           </p>
         </div>
 
-        <!-- Hermes AI Projekt (Nagy kártya) -->
-        <div class="glass-card p-8 sm:p-10 rounded-3xl border border-sky-500/30 bg-gradient-to-br from-slate-900/90 via-brand-900/60 to-slate-900/90 relative overflow-hidden mb-12">
-          <div class="absolute -right-16 -bottom-16 w-64 h-64 bg-sky-500/10 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="feature-project">
           
-          <div class="mb-4 flex items-center justify-between gap-4">
-            <span class="text-sm font-bold uppercase tracking-widest px-3.5 py-1.5 rounded-full bg-sky-500/15 text-sky-400 border border-sky-500/30 inline-flex items-center gap-2">
-              <i data-lucide="cpu" class="w-4 h-4 text-sky-400"></i> SAJÁT R&D • AGENTIC KERETRENDSZER
+          
+          <div class="project-meta">
+            <span>
+              <i data-lucide="cpu"></i> SAJÁT R&amp;D • AGENTIC KERETRENDSZER
             </span>
-            <span class="text-sm text-slate-400 font-mono hidden sm:inline-block">Independent Architecture</span>
+            <span>Independent Architecture</span>
           </div>
 
-          <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-400 mb-5">
-            <span class="px-2.5 py-1 rounded bg-slate-800/80 border border-slate-700/60">Autonomous Agents</span>
-            <span class="px-2.5 py-1 rounded bg-slate-800/80 border border-slate-700/60">Workflow Automation</span>
-            <span class="px-2.5 py-1 rounded bg-slate-800/80 border border-slate-700/60">AI Development</span>
+          <div class="tags">
+            <span>Autonomous Agents</span>
+            <span>Workflow Automation</span>
+            <span>AI Development</span>
           </div>
 
-          <h3 class="text-xl sm:text-2xl font-bold text-white mb-5 leading-snug">
-            Hermes AI: Autonóm Munkafolyamat-Asszisztens & Döntéstámogató Rendszer
+          <h3>
+            Hermes AI: Autonóm Munkafolyamat-Asszisztens &amp; Döntéstámogató Rendszer
           </h3>
 
-          <div class="grid md:grid-cols-2 gap-8 text-sm text-slate-300 leading-relaxed mb-8">
+          <div class="project-columns">
             <div>
-              <p class="font-semibold text-sky-400 uppercase tracking-wider text-xs mb-2">A Kihívás & Cél</p>
+              <p>A Kihívás &amp; Cél</p>
               <p>
                 A manuális kutatási, adatelemzési és hibakeresési folyamatok töredezettségének felszámolása egy általam tervezett, proaktív és felügyelt autonómiával működő intelligens döntéstámogató környezettel.
               </p>
             </div>
             <div>
-              <p class="font-semibold text-sky-400 uppercase tracking-wider text-xs mb-2">Architektúra & Biztonság</p>
+              <p>Architektúra &amp; Biztonság</p>
               <p>
                 Saját fejlesztésű, moduláris agentic keretrendszerre épülő megoldás. Feladata a szekvenciális teendők láncba rendezése és kontextusmegőrzése önálló végrehajtás és szigorú biztonsági kontroll mellett.
               </p>
             </div>
           </div>
 
-          <div class="pt-5 border-t border-slate-800/80 mt-2 flex items-center justify-between flex-wrap gap-3">
-            <p class="text-sm font-semibold text-sky-400 w-full">
-              <span class="text-xs font-bold text-slate-400 uppercase tracking-wider block mb-1">Eredmény & Hatás</span>
+          <div class="project-result">
+            <p>
+              <span>Eredmény &amp; Hatás</span>
               A manuális operációs erőfeszítés radikális csökkenése, rövidülő döntési ciklusok, és valós idejű technológiai másodvélemény (second opinion).
             </p>
           </div>
-        </div>
+        <button type="button" class="demo-launch" data-open-demo=""><i data-lucide="play"></i> Interaktív bemutató</button></div>
 
-        <!-- 3 Kisebb Esettanulmány kártya -->
-        <div class="grid lg:grid-cols-3 gap-6">
-          
-          <div class="glass-card p-6 sm:p-8 rounded-2xl flex flex-col justify-between border-t-2 border-t-sky-400">
+        <div class="project-list">
+          <div class="project-row">
             <div>
-              <span class="text-xs font-bold tracking-wider uppercase px-3 py-1.5 rounded-full bg-sky-500/10 text-sky-400 border border-sky-500/20 inline-flex items-center gap-2 mb-4">
-                <i data-lucide="shield-check" class="w-4 h-4"></i> ENTERPRISE IT & SECURITY
+              <span>
+                <i data-lucide="shield-check"></i> ENTERPRISE IT &amp; SECURITY
               </span>
-              
-              <div class="flex flex-wrap gap-2 text-[11px] font-mono text-slate-400 mb-5">
-                <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">Authentication</span>
-                <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">IT Specs</span>
-                <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">Security</span>
+              <div>
+                <span>Authentication</span>
+                <span>IT Specs</span>
               </div>
-
-              <h3 class="text-lg font-bold text-white leading-snug mb-3">2FA Hitelesítési Logika & Nagyvállalati Specifikáció</h3>
-              
-              <p class="text-sm text-slate-300 leading-relaxed mb-6">
+              <h3>2FA Hitelesítési Logika &amp; Nagyvállalati Specifikáció</h3>
+              <p>
                 Kétszintű specifikációs modell alkalmazása: mérnöki dokumentáció a fejlesztőknek és funkcionális folyamatleírások a menedzsmentnek az új 2FA hitelesítési és biztonsági folyamatok zökkenőmentes terítéséhez.
               </p>
             </div>
-
-            <div class="pt-5 border-t border-slate-800/70 mt-auto">
-              <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Eredmény</p>
-              <p class="text-sm font-semibold text-sky-400">Stabil, szabványosított biztonsági release</p>
+            <div class="project-result">
+              <p>Eredmény</p>
+              <p>Stabil, szabványosított biztonsági release</p>
             </div>
           </div>
 
-          <div class="glass-card p-6 sm:p-8 rounded-2xl flex flex-col justify-between border-t-2 border-t-purple-400">
+          <div class="project-row">
             <div>
-              <span class="text-xs font-bold tracking-wider uppercase px-3 py-1.5 rounded-full bg-purple-500/10 text-purple-400 border border-purple-500/20 inline-flex items-center gap-2 mb-4">
-                <i data-lucide="bot" class="w-4 h-4"></i> AI ADAPTÁCIÓ & COMPLIANCE
+              <span>
+                <i data-lucide="bot"></i> AI ADAPTÁCIÓ &amp; COMPLIANCE
               </span>
-              
-              <div class="flex flex-wrap gap-2 text-[11px] font-mono text-slate-400 mb-5">
-                <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">GenAI</span>
-                <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">Prompt Design</span>
-                <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">Compliance</span>
+              <div>
+                <span>GenAI</span>
+                <span>Compliance</span>
               </div>
-
-              <h3 class="text-lg font-bold text-white leading-snug mb-3">MiFID AI Prompt-Architektúra</h3>
-              
-              <p class="text-sm text-slate-300 leading-relaxed mb-6">
+              <h3>MiFID AI Prompt-Architektúra</h3>
+              <p>
                 Anonimizált befektetési perszónákra és MiFID-modellekre épülő generatív AI megoldás kidolgozása a prémium ügyfelek portfólió-felkészülésének automatizált rövidítésére, szigorú banktitok mellett.
               </p>
             </div>
-
-            <div class="pt-5 border-t border-slate-800/70 mt-auto">
-              <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Eredmény</p>
-              <p class="text-sm font-semibold text-purple-400">Rövidülő döntési és felkészülési ciklusok</p>
+            <div class="project-result">
+              <p>Eredmény</p>
+              <p>Rövidülő döntési és felkészülési ciklusok</p>
             </div>
           </div>
 
-          <div class="glass-card p-6 sm:p-8 rounded-2xl flex flex-col justify-between border-t-2 border-t-emerald-400">
+          <div class="project-row">
             <div>
-              <span class="text-xs font-bold tracking-wider uppercase px-3 py-1.5 rounded-full bg-emerald-500/10 text-emerald-400 border border-emerald-500/20 inline-flex items-center gap-2 mb-4">
-                <i data-lucide="monitor-smartphone" class="w-4 h-4"></i> WEB & DECISION SUPPORT
+              <span>
+                <i data-lucide="monitor-smartphone"></i> WEB &amp; DECISION SUPPORT
               </span>
-              
-              <div class="flex flex-wrap gap-2 text-[11px] font-mono text-slate-400 mb-5">
-                <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">Power BI</span>
-                <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">Infrastructure</span>
-                <span class="px-2 py-1 rounded bg-slate-800/80 border border-slate-700/60">Dashboards</span>
+              <div>
+                <span>Power BI</span>
+                <span>Dashboards</span>
               </div>
-
-              <h3 class="text-lg font-bold text-white leading-snug mb-3">End-to-End Termékfejlesztés & BI</h3>
-              
-              <p class="text-sm text-slate-300 leading-relaxed mb-6">
+              <h3>End-to-End Termékfejlesztés &amp; BI</h3>
+              <p>
                 Ügyfelek digitális jelenlétének és webes infrastruktúrájának teljes körű technológiai menedzsmentje, kiegészítve automatizált, adatvezérelt Power BI dashboardokkal a vezetői döntések támogatására.
               </p>
             </div>
-
-            <div class="pt-5 border-t border-slate-800/70 mt-auto">
-              <p class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-1">Eredmény</p>
-              <p class="text-sm font-semibold text-emerald-400">Mérhető, adatvezérelt technológiai felügyelet</p>
+            <div class="project-result">
+              <p>Eredmény</p>
+              <p>Mérhető, adatvezérelt technológiai felügyelet</p>
             </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- Karrierút (Szakmai Tapasztalat) -->
-    <section id="tapasztalat" class="py-20 bg-brand-900/30 border-t border-slate-800/60">
-      <div class="max-w-4xl mx-auto px-6">
-        <div class="mb-14">
-          <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Szakmai Tapasztalat</h2>
-          <p class="text-slate-400 text-base mt-3">Banki compliance, nagyvállalati Azure üzemeltetés és folyamatautomatizáció.</p>
-        </div>
-
-        <div class="space-y-8 border-l border-slate-800 pl-8 ml-3">
-          
-          <div class="relative">
-            <div class="absolute -left-[40px] top-1.5 w-3.5 h-3.5 rounded-full bg-sky-400 ring-4 ring-brand-950"></div>
-            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1.5 mb-1.5">
-              <h3 class="text-lg font-bold text-white">Prémium / Pénzügyi Tanácsadó</h3>
-              <span class="text-sm font-semibold text-sky-400">2026. feb. – Jelenleg</span>
-            </div>
-            <p class="text-sm font-medium text-slate-400 mb-2.5">K&H Csoport</p>
-            <p class="text-sm text-slate-300 leading-relaxed">
-              Komplex lakossági és prémium számla- és befektetési portfóliók kezelése. Value proposition kommunikációja, banki core-rendszerek kezelése szigorú MNB compliance mellett. Adminisztratív és kockázatkezelési munkafolyamatok optimalizálása, adatvezérelt cross-sell / up-sell stratégiák végrehajtása.
-            </p>
-          </div>
-
-          <div class="relative">
-            <div class="absolute -left-[40px] top-1.5 w-3.5 h-3.5 rounded-full bg-slate-700 ring-4 ring-brand-950"></div>
-            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1.5 mb-1.5">
-              <h3 class="text-lg font-bold text-white">Pénzügyi Tanácsadó & Belső Mentor</h3>
-              <span class="text-sm font-semibold text-slate-400">2024. ápr. – 2026. feb.</span>
-            </div>
-            <p class="text-sm font-medium text-slate-400 mb-2.5">MBH Bank</p>
-            <p class="text-sm text-slate-300 leading-relaxed">
-              Nagyvállalati IT alkalmazások backlog menedzsmentje és a front-office operációs folyamatok technikai támogatása. Üzleti követelmények (BRD) lefordítása IT specifikációkra (User Story-k), részvétel az agilis (Scrum) termékfejlesztési ciklusokban. Rendszerszintű automatizálási lehetőségek és elakadások feltárása.
-            </p>
-          </div>
-
-          <div class="relative">
-            <div class="absolute -left-[40px] top-1.5 w-3.5 h-3.5 rounded-full bg-slate-700 ring-4 ring-brand-950"></div>
-            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1.5 mb-1.5">
-              <h3 class="text-lg font-bold text-white">Alkalmazásüzemeltető és Rendszerszervező</h3>
-              <span class="text-sm font-semibold text-slate-400">2023. feb. – 2024. feb.</span>
-            </div>
-            <p class="text-sm font-medium text-slate-400 mb-2.5">Nemzeti Adó- és Vámhivatal (NAV)</p>
-            <p class="text-sm text-slate-300 leading-relaxed">
-              Teljes körű Azure infrastruktúra ismeret és üzemeltetés. Országos szintű rendszerek bevetése, hibrid (cloud/on-premise) környezetek felügyelete. Szoftverfrissítések, biztonságos release-ek menedzselése és a repetitív üzemeltetési feladatok automatizálása. Szigorú, precíz üzemeltetési dokumentációk készítése az IT és az üzleti oldal számára.
-            </p>
-          </div>
-
-          <div class="relative">
-            <div class="absolute -left-[40px] top-1.5 w-3.5 h-3.5 rounded-full bg-slate-700 ring-4 ring-brand-950"></div>
-            <div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-1.5 mb-1.5">
-              <h3 class="text-lg font-bold text-white">IT Üzemeltető / Webfejlesztő</h3>
-              <span class="text-sm font-semibold text-slate-400">2020. dec. – 2022. feb.</span>
-            </div>
-            <p class="text-sm font-medium text-slate-400 mb-2.5">Reklámügynökség</p>
-            <p class="text-sm text-slate-300 leading-relaxed">
-              Vállalati NAS szerverek hálózati telepítése, konfigurálása és proaktív felügyelete. Biztonsági mentések (backup) és adatfolyamatok automatizálása, valamint ezek részletes dokumentálása. Weboldalak end-to-end fejlesztése. Adatgyűjtési és adatelemzési architektúrák (Google Analytics, Power BI) automatizált fenntartása a menedzsment támogatására.
-            </p>
-          </div>
-        </div>
-
-        <!-- Referencia -->
-        <div class="mt-12 glass-card p-6 sm:p-8 rounded-2xl border-l-4 border-l-sky-400 flex flex-col sm:flex-row sm:items-center justify-between gap-5">
-          <div class="flex items-center gap-5">
-            <div class="w-14 h-14 rounded-xl bg-sky-500/15 text-sky-400 flex items-center justify-center shrink-0">
-              <i data-lucide="user-check" class="w-7 h-7"></i>
-            </div>
-            <div>
-              <span class="text-xs font-bold text-sky-400 uppercase tracking-widest">Szakmai referencia</span>
-              <h4 class="text-base font-bold text-white mt-0.5">Kovács András</h4>
-              <p class="text-sm text-slate-400">Fiókvezető</p>
-            </div>
-          </div>
-          <div class="sm:text-right border-t sm:border-t-0 pt-4 sm:pt-0 border-slate-800">
-            <a href="tel:+36706239004" class="inline-flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-lg bg-slate-900 border border-slate-800 text-slate-200 hover:text-sky-400 transition-all">
-              <i data-lucide="phone" class="w-4 h-4 text-sky-400"></i> +36 70 623 9004
-            </a>
           </div>
         </div>
       </div>
     </section>
+<section id="tapasztalat" class="section section-tapasztalat">
+      <div class="wrap">
+        <div class="section-heading"><span class="section-number" aria-hidden="true">03</span>
+          <h2>Szakmai Tapasztalat</h2>
+          <p>Banki compliance, nagyvállalati Azure üzemeltetés és folyamatautomatizáció.</p>
+        </div>
 
-    <!-- Tanulmányok & Képesítések -->
-    <section id="tanulmanyok" class="py-20 border-t border-slate-800/60">
-      <div class="max-w-6xl mx-auto px-6">
+        <div class="career-calendar">
+          <div class="career-calendar-heading"><strong>Karrierút · 2020 decemberétől</strong><span>Kattints egy munkahelyre a részletekért ↓</span></div>
+          <div class="career-calendar-axis" aria-hidden="true"><span style="left:1.4286%">2021</span><span style="left:18.5714%">2022</span><span style="left:35.7143%">2023</span><span style="left:52.8571%">2024</span><span style="left:70%">2025</span><span style="left:87.1429%">2026</span></div>
+          <details class="career-event" data-career-start="2026-02" data-career-current style="--career-start:88.5714%;--career-length:11.4286%">
+            <summary>
+              <span class="career-summary-copy"><strong class="career-position">Prémium / Pénzügyi Tanácsadó</strong><span class="career-company">K&amp;H Csoport</span><span class="career-period"><time datetime="2026-02">2026. február</time> – Jelenleg<span class="career-current-label">Aktív</span></span></span>
+              <span class="career-lane" aria-hidden="true"><span class="career-bar"></span></span>
+              <span class="career-chevron" aria-hidden="true">⌄</span>
+            </summary>
+            <div class="career-description"><h3>Feladatok és szakmai tapasztalat</h3><p>Komplex lakossági és prémium számla- és befektetési portfóliók kezelése. Value proposition kommunikációja, banki core-rendszerek kezelése szigorú MNB compliance mellett. Adminisztratív és kockázatkezelési munkafolyamatok optimalizálása, adatvezérelt cross-sell / up-sell stratégiák végrehajtása.</p></div>
+          </details>
+          <details class="career-event" data-career-start="2024-04" data-career-end="2026-02" style="--career-start:57.1429%;--career-length:31.4286%">
+            <summary>
+              <span class="career-summary-copy"><strong class="career-position">Pénzügyi Tanácsadó &amp; Belső Mentor</strong><span class="career-company">MBH Bank</span><span class="career-period"><time datetime="2024-04">2024. április</time> – <time datetime="2026-02">2026. február</time></span></span>
+              <span class="career-lane" aria-hidden="true"><span class="career-bar"></span></span>
+              <span class="career-chevron" aria-hidden="true">⌄</span>
+            </summary>
+            <div class="career-description"><h3>Feladatok és szakmai tapasztalat</h3><p>Nagyvállalati IT alkalmazások backlog menedzsmentje és a front-office operációs folyamatok technikai támogatása. Üzleti követelmények (BRD) lefordítása IT specifikációkra (User Story-k), részvétel az agilis (Scrum) termékfejlesztési ciklusokban. Rendszerszintű automatizálási lehetőségek és elakadások feltárása.</p></div>
+          </details>
+          <details class="career-event" data-career-start="2023-02" data-career-end="2024-02" style="--career-start:37.1429%;--career-length:17.1429%">
+            <summary>
+              <span class="career-summary-copy"><strong class="career-position">Alkalmazásüzemeltető és Rendszerszervező</strong><span class="career-company">Nemzeti Adó- és Vámhivatal (NAV)</span><span class="career-period"><time datetime="2023-02">2023. február</time> – <time datetime="2024-02">2024. február</time></span></span>
+              <span class="career-lane" aria-hidden="true"><span class="career-bar"></span></span>
+              <span class="career-chevron" aria-hidden="true">⌄</span>
+            </summary>
+            <div class="career-description"><h3>Feladatok és szakmai tapasztalat</h3><p>Teljes körű Azure infrastruktúra ismeret és üzemeltetés. Országos szintű rendszerek bevetése, hibrid (cloud/on-premise) környezetek felügyelete. Szoftverfrissítések, biztonságos release-ek menedzselése és a repetitív üzemeltetési feladatok automatizálása. Szigorú, precíz üzemeltetési dokumentációk készítése az IT és az üzleti oldal számára.</p></div>
+          </details>
+          <details class="career-event" data-career-start="2020-12" data-career-end="2022-02" style="--career-start:0%;--career-length:20%">
+            <summary>
+              <span class="career-summary-copy"><strong class="career-position">IT Üzemeltető / Webfejlesztő</strong><span class="career-company">Reklámügynökség</span><span class="career-period"><time datetime="2020-12">2020. december</time> – <time datetime="2022-02">2022. február</time></span></span>
+              <span class="career-lane" aria-hidden="true"><span class="career-bar"></span></span>
+              <span class="career-chevron" aria-hidden="true">⌄</span>
+            </summary>
+            <div class="career-description"><h3>Feladatok és szakmai tapasztalat</h3><p>Vállalati NAS szerverek hálózati telepítése, konfigurálása és proaktív felügyelete. Biztonsági mentések (backup) és adatfolyamatok automatizálása, valamint ezek részletes dokumentálása. Weboldalak end-to-end fejlesztése. Adatgyűjtési és adatelemzési architektúrák automatizált fenntartása a menedzsment számára.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+<section id="tanulmanyok" class="section section-tanulmanyok">
+      <div class="wrap">
         
-        <div class="mb-14 text-center max-w-2xl mx-auto">
-          <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Tanulmányok & Képesítések</h2>
-          <p class="text-slate-400 text-base mt-3">Mérnöki alapok és nemzetközileg elismert szakmai akkreditációk.</p>
+        <div class="section-heading"><span class="section-number" aria-hidden="true">04</span>
+          <h2>Tanulmányok &amp; Képesítések</h2>
+          <p>Mérnöki alapok és nemzetközileg elismert szakmai akkreditációk.</p>
         </div>
 
-        <!-- Főiskola / Gimnázium / OKJ -->
-        <div class="grid md:grid-cols-3 gap-6 mb-16">
-          <div class="glass-card p-6 sm:p-8 rounded-2xl border-l-4 border-l-sky-400 flex flex-col justify-between">
+        
+        <div class="degree-list"><div class="degree in-progress">
             <div>
-              <span class="text-xs font-bold text-sky-400 uppercase tracking-wider">Felsőfokú Alapképzés (BSc)</span>
-              <h4 class="text-xl font-bold text-white mt-3">Mérnökinformatikus</h4>
-              <p class="text-sm text-slate-300 mt-1.5">Gábor Dénes Egyetem</p>
+              <span>Felsőfokú Alapképzés (BSc)</span>
+              <h4>Mérnökinformatikus</h4>
+              <p>Gábor Dénes Egyetem</p>
             </div>
-            <div class="mt-8 pt-5 border-t border-slate-800/80 flex items-center justify-between">
-              <span class="text-sm text-emerald-400 font-semibold flex items-center gap-1.5">
-                <span class="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse"></span> Folyamatban
+            <div>
+              <span class="status ongoing">
+                <span></span> Folyamatban
               </span>
-              <span class="text-[13px] text-slate-500">Műszaki & Szoftver</span>
+              <span>Műszaki &amp; Szoftver</span>
             </div>
-          </div>
-
-          <div class="glass-card p-6 sm:p-8 rounded-2xl border-l-4 border-l-emerald-400 flex flex-col justify-between">
+          </div><div class="degree">
             <div>
-              <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Szakmai Képesítés</span>
-              <h4 class="text-xl font-bold text-white mt-3">Rendszerüzemeltető</h4>
-              <p class="text-sm text-slate-300 mt-1.5">Mikes Kelemen Felnőtt és Ifjúság Gimnázium</p>
+              <span>Szakmai Képesítés</span>
+              <h4>Rendszerüzemeltető</h4>
+              <p>Mikes Kelemen Felnőtt és Ifjúság Gimnázium</p>
             </div>
-            <div class="mt-8 pt-5 border-t border-slate-800/80 flex items-center justify-between">
-              <span class="text-sm text-slate-400 font-medium">2017 – 2019</span>
-              <span class="text-[13px] text-slate-500">IT Infrastruktúra</span>
-            </div>
-          </div>
-
-          <div class="glass-card p-6 sm:p-8 rounded-2xl border-l-4 border-l-slate-600 flex flex-col justify-between">
             <div>
-              <span class="text-xs font-bold text-slate-400 uppercase tracking-wider">Középfokú Végzettség</span>
-              <h4 class="text-xl font-bold text-white mt-3">Érettségi bizonyítvány</h4>
-              <p class="text-sm text-slate-300 mt-1.5">Mikes Kelemen Felnőtt és Ifjúság Gimnázium</p>
+              <span>2017 – 2019</span>
+              <span>IT Infrastruktúra</span>
             </div>
-            <div class="mt-8 pt-5 border-t border-slate-800/80 flex items-center justify-between">
-              <span class="text-sm text-slate-400 font-medium">2014 – 2017</span>
-              <span class="text-[13px] text-slate-500">Gimnázium</span>
+          </div><div class="degree">
+            <div>
+              <span>Középfokú Végzettség</span>
+              <h4>Érettségi bizonyítvány</h4>
+              <p>Mikes Kelemen Felnőtt és Ifjúság Gimnázium</p>
             </div>
-          </div>
-        </div>
+            <div>
+              <span>2014 – 2017</span>
+              <span>Gimnázium</span>
+            </div>
+          </div></div>
 
-        <!-- 1. CSOPORT: AI, IT & Infrastruktúra -->
-        <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
-          <i data-lucide="terminal" class="w-5 h-5 text-sky-400"></i> AI, IT & Infrastruktúra
+        
+        <h3 class="certificate-heading">
+          <i data-lucide="terminal"></i> AI, IT &amp; Infrastruktúra
         </h3>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
-          
-          <div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800 flex items-start gap-4">
-            <div class="w-12 h-12 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center shrink-0 mt-0.5">
-              <i data-lucide="cpu" class="w-6 h-6"></i>
-            </div>
-            <div>
-              <span class="text-xs font-bold text-sky-400 uppercase tracking-wider">IBM Tanúsítvány</span>
-              <h5 class="text-base font-bold text-white leading-snug mt-1">Introduction to Artificial Intelligence (AI)</h5>
-              <p class="text-sm text-emerald-400 font-semibold mt-1.5 flex items-center gap-1.5">
-                <i data-lucide="check-circle-2" class="w-4 h-4"></i> Elvégezve
-              </p>
-            </div>
-          </div>
+        <div class="certificate-list"><div class="certificate in-progress"><div class="credential-icon" aria-hidden="true"><i data-lucide="brain-circuit"></i></div><div class="credential-copy"><span>IBM Tanúsítvány</span><h5>Generative AI: Introduction &amp; Applications</h5><p class="status ongoing">
+                <span></span> Folyamatban
+              </p></div></div><article class="certificate in-progress"><div class="credential-icon" aria-hidden="true"><i data-lucide="award"></i></div><div class="credential-copy"><span>Google Tanúsítvány</span><h5>AI Fundamentals</h5><p class="status ongoing">Folyamatban</p></div></article><article class="certificate in-progress"><div class="credential-icon" aria-hidden="true"><i data-lucide="award"></i></div><div class="credential-copy"><span>Microsoft</span><h5>AZ-900: Microsoft Azure Fundamentals</h5><p class="status ongoing">Folyamatban</p></div></article><div class="certificate"><div class="credential-icon" aria-hidden="true"><i data-lucide="cpu"></i></div><div class="credential-copy"><span>IBM Tanúsítvány</span><h5>Introduction to Artificial Intelligence (AI)</h5><p class="status done">
+                <i data-lucide="check-circle-2"></i> Elvégezve
+              </p></div></div><div class="certificate"><div class="credential-icon" aria-hidden="true"><i data-lucide="server"></i></div><div class="credential-copy"><span>Google Tanúsítvány</span><h5>Technical Support Fundamentals</h5><p class="status done">
+                <i data-lucide="check-circle-2"></i> Elvégezve
+              </p></div></div><article class="certificate"><div class="credential-icon" aria-hidden="true"><i data-lucide="award"></i></div><div class="credential-copy"><span>NVIDIA</span><h5>Introduction to Networking</h5><p class="status done">Elvégezve</p></div></article></div>
 
-          <div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800 flex items-start gap-4">
-            <div class="w-12 h-12 rounded-xl bg-purple-500/10 text-purple-400 flex items-center justify-center shrink-0 mt-0.5">
-              <i data-lucide="brain-circuit" class="w-6 h-6"></i>
-            </div>
-            <div>
-              <span class="text-xs font-bold text-purple-400 uppercase tracking-wider">IBM Tanúsítvány</span>
-              <h5 class="text-base font-bold text-white leading-snug mt-1">Generative AI: Introduction & Applications</h5>
-              <p class="text-sm text-slate-400 mt-1.5 flex items-center gap-1.5">
-                <span class="w-2 h-2 rounded-full bg-purple-400 animate-pulse"></span> Folyamatban
-              </p>
-            </div>
-          </div>
-
-          <div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800 flex items-start gap-4">
-            <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0 mt-0.5">
-              <i data-lucide="bot" class="w-6 h-6"></i>
-            </div>
-            <div>
-              <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">Google Tanúsítvány</span>
-              <h5 class="text-base font-bold text-white leading-snug mt-1">AI Fundamentals</h5>
-              <p class="text-sm text-slate-400 mt-1.5 flex items-center gap-1.5">
-                <span class="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span> Folyamatban
-              </p>
-            </div>
-          </div>
-
-          <div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800 flex items-start gap-4">
-            <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center shrink-0 mt-0.5">
-              <i data-lucide="network" class="w-6 h-6"></i>
-            </div>
-            <div>
-              <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">NVIDIA</span>
-              <h5 class="text-base font-bold text-white leading-snug mt-1">Introduction to Networking</h5>
-              <p class="text-sm text-emerald-400 font-semibold mt-1.5 flex items-center gap-1.5">
-                <i data-lucide="check-circle-2" class="w-4 h-4"></i> Elvégezve
-              </p>
-            </div>
-          </div>
-
-          <div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800 flex items-start gap-4">
-            <div class="w-12 h-12 rounded-xl bg-blue-500/10 text-blue-400 flex items-center justify-center shrink-0 mt-0.5">
-              <i data-lucide="server" class="w-6 h-6"></i>
-            </div>
-            <div>
-              <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">Google Tanúsítvány</span>
-              <h5 class="text-base font-bold text-white leading-snug mt-1">Technical Support Fundamentals</h5>
-              <p class="text-sm text-emerald-400 font-semibold mt-1.5 flex items-center gap-1.5">
-                <i data-lucide="check-circle-2" class="w-4 h-4"></i> Elvégezve
-              </p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 2. CSOPORT: Analitika, Agilitás & Menedzsment -->
-        <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
-          <i data-lucide="bar-chart-2" class="w-5 h-5 text-orange-400"></i> Analitika, Agilitás & Menedzsment
+        
+        <h3 class="certificate-heading">Analitika, Agilitás &amp; Menedzsment</h3><div class="certificate-list"><article class="certificate in-progress"><div class="credential-icon" aria-hidden="true"><i data-lucide="award"></i></div><div class="credential-copy"><span>Google Tanúsítvány</span><h5>Foundations of Project Management</h5><p class="status ongoing">Folyamatban</p></div></article><article class="certificate"><div class="credential-icon" aria-hidden="true"><i data-lucide="award"></i></div><div class="credential-copy"><span>Google Tanúsítvány</span><h5>Analytics for Beginners</h5><p class="status done">Elvégezve</p></div></article></div><h3 class="certificate-heading">
+          <i data-lucide="landmark"></i> Pénzügy, Kockázatkezelés &amp; Compliance
         </h3>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 mb-14">
-          
-          <div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800 flex items-start gap-4">
-            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
-              <i data-lucide="kanban-square" class="w-6 h-6"></i>
-            </div>
-            <div>
-              <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Google Tanúsítvány</span>
-              <h5 class="text-base font-bold text-white leading-snug mt-1">Foundations of Project Management</h5>
-              <p class="text-sm text-slate-400 mt-1.5 flex items-center gap-1.5">
-                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Folyamatban
-              </p>
-            </div>
-          </div>
-          
-          <div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800 flex items-start gap-4">
-            <div class="w-12 h-12 rounded-xl bg-orange-500/10 text-orange-400 flex items-center justify-center shrink-0 mt-0.5">
-              <i data-lucide="pie-chart" class="w-6 h-6"></i>
-            </div>
-            <div>
-              <span class="text-xs font-bold text-orange-400 uppercase tracking-wider">Google Tanúsítvány</span>
-              <h5 class="text-base font-bold text-white leading-snug mt-1">Analytics for Beginners</h5>
-              <p class="text-sm text-emerald-400 font-semibold mt-1.5 flex items-center gap-1.5">
-                <i data-lucide="check-circle-2" class="w-4 h-4"></i> Elvégezve
-              </p>
-            </div>
-          </div>
-          
-        </div>
-
-        <!-- 3. CSOPORT: Pénzügy, Kockázatkezelés & Compliance -->
-        <h3 class="text-xl font-bold text-white mb-6 flex items-center gap-2">
-          <i data-lucide="landmark" class="w-5 h-5 text-emerald-400"></i> Pénzügy, Kockázatkezelés & Compliance
-        </h3>
-        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          
-          <div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800 flex items-start gap-4">
-            <div class="w-12 h-12 rounded-xl bg-amber-500/10 text-amber-400 flex items-center justify-center shrink-0 mt-0.5">
-              <i data-lucide="scale" class="w-6 h-6"></i>
-            </div>
-            <div>
-              <span class="text-xs font-bold text-amber-400 uppercase tracking-wider">Hatósági Tanúsítvány</span>
-              <h5 class="text-base font-bold text-white leading-snug mt-1">MNB Tőkepiaci Hatósági Vizsga</h5>
-              <p class="text-sm text-emerald-400 font-semibold mt-1.5 flex items-center gap-1.5">
-                <i data-lucide="check-circle-2" class="w-4 h-4"></i> Elvégezve
-              </p>
-            </div>
-          </div>
-
-          <div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800 flex items-start gap-4">
-            <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
-              <i data-lucide="file-signature" class="w-6 h-6"></i>
-            </div>
-            <div>
-              <span class="text-xs font-bold text-emerald-400 uppercase tracking-wider">Hatósági Tanúsítvány</span>
-              <h5 class="text-base font-bold text-white leading-snug mt-1">MNB Függő Biztosításközvetítő</h5>
-              <p class="text-sm text-emerald-400 font-semibold mt-1.5 flex items-center gap-1.5">
-                <i data-lucide="check-circle-2" class="w-4 h-4"></i> Elvégezve
-              </p>
-            </div>
-          </div>
-
-          <div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800 flex items-start gap-4">
-            <div class="w-12 h-12 rounded-xl bg-blue-400/10 text-blue-400 flex items-center justify-center shrink-0 mt-0.5">
-              <i data-lucide="briefcase" class="w-6 h-6"></i>
-            </div>
-            <div>
-              <span class="text-xs font-bold text-blue-400 uppercase tracking-wider">Szakmai Képesítés</span>
-              <h5 class="text-base font-bold text-white leading-snug mt-1">MNB-EduLab (Tech & Money Expert)</h5>
-              <p class="text-sm text-emerald-400 font-semibold mt-1.5 flex items-center gap-1.5">
-                <i data-lucide="check-circle-2" class="w-4 h-4"></i> Elvégezve
-              </p>
-            </div>
-          </div>
-
-          <div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800 flex items-start gap-4">
-            <div class="w-12 h-12 rounded-xl bg-blue-600/15 text-sky-400 flex items-center justify-center shrink-0 mt-0.5">
-              <i data-lucide="line-chart" class="w-6 h-6"></i>
-            </div>
-            <div>
-              <span class="text-xs font-bold text-sky-400 uppercase tracking-wider">Yale University</span>
-              <h5 class="text-base font-bold text-white leading-snug mt-1">Financial Markets</h5>
-              <p class="text-sm text-slate-400 mt-1.5 flex items-center gap-1.5">
-                <span class="w-2 h-2 rounded-full bg-sky-400 animate-pulse"></span> Folyamatban
-              </p>
-            </div>
-          </div>
-
-          <div class="p-5 rounded-2xl bg-slate-900/70 border border-slate-800 flex items-start gap-4">
-            <div class="w-12 h-12 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center shrink-0 mt-0.5">
-              <i data-lucide="users" class="w-6 h-6"></i>
-            </div>
-            <div>
-              <span class="text-xs font-bold text-indigo-400 uppercase tracking-wider">Duke University</span>
-              <h5 class="text-base font-bold text-white leading-snug mt-1">Behavioral Finance</h5>
-              <p class="text-sm text-emerald-400 font-semibold mt-1.5 flex items-center gap-1.5">
-                <i data-lucide="check-circle-2" class="w-4 h-4"></i> Elvégezve
-              </p>
-            </div>
-          </div>
-
-        </div>
+        <div class="certificate-list"><article class="certificate in-progress"><div class="credential-icon" aria-hidden="true"><i data-lucide="award"></i></div><div class="credential-copy"><span>Yale University</span><h5>Financial Markets</h5><p class="status ongoing">Folyamatban</p></div></article><div class="certificate"><div class="credential-icon" aria-hidden="true"><i data-lucide="scale"></i></div><div class="credential-copy"><span>Hatósági Tanúsítvány</span><h5>MNB Tőkepiaci Hatósági Vizsga</h5><p class="status done">
+                <i data-lucide="check-circle-2"></i> Elvégezve
+              </p></div></div><div class="certificate"><div class="credential-icon" aria-hidden="true"><i data-lucide="file-signature"></i></div><div class="credential-copy"><span>Hatósági Tanúsítvány</span><h5>MNB Függő Biztosításközvetítő</h5><p class="status done">
+                <i data-lucide="check-circle-2"></i> Elvégezve
+              </p></div></div><div class="certificate"><div class="credential-icon" aria-hidden="true"><i data-lucide="briefcase"></i></div><div class="credential-copy"><span>Szakmai Képesítés</span><h5>MNB-EduLab (Tech &amp; Money Expert)</h5><p class="status done">
+                <i data-lucide="check-circle-2"></i> Elvégezve
+              </p></div></div><article class="certificate"><div class="credential-icon" aria-hidden="true"><i data-lucide="award"></i></div><div class="credential-copy"><span>Duke University</span><h5>Behavioral Finance</h5><p class="status done">Elvégezve</p></div></article></div>
 
       </div>
     </section>
-
-    <!-- Kapcsolat -->
-    <section id="kapcsolat" class="py-20 border-t border-slate-800/60 bg-gradient-to-b from-brand-950 to-slate-950">
-      <div class="max-w-4xl mx-auto px-6">
-        <div class="glass-card p-10 sm:p-12 rounded-3xl border border-slate-800 text-center relative overflow-hidden">
-          <h2 class="text-3xl sm:text-4xl font-bold text-white tracking-tight">Kezdjünk egyeztetést</h2>
-          <p class="text-slate-400 text-base max-w-lg mx-auto mt-3 mb-10">
-            Nyitott vagyok alkalmazásüzemeltetői, Azure felhő-adminisztrátori, valamint AI és folyamatautomatizálási (TPM) szerepkörökre.
+<section id="kapcsolat" class="section section-kapcsolat">
+      <div class="wrap">
+        <div class="contact-content"><span class="section-number" aria-hidden="true">05</span>
+          <h2>Kezdjünk egyeztetést</h2>
+          <p>
+            Nyitott vagyok alkalmazásüzemeltetői, Azure felhő-adminisztrátori, valamint AI és folyamatautomatizálási szerepkörökre.
           </p>
 
-          <div class="flex flex-wrap justify-center gap-5 text-sm font-semibold">
-            <a href="tel:+36302254475" class="px-6 py-3.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 hover:bg-slate-800 flex items-center gap-2.5 transition-all">
-              <i data-lucide="phone" class="w-4 h-4 text-sky-400"></i> +36 30 225 4475
+          <div class="contact-links">
+            <a href="tel:+36302254475">
+              <i data-lucide="phone"></i> +36 30 225 4475
             </a>
-            <a href="mailto:zoltan.richard.szedeli@gmail.com" class="px-6 py-3.5 rounded-xl bg-sky-500 text-white hover:bg-sky-600 flex items-center gap-2.5 transition-all">
-              <i data-lucide="mail" class="w-4 h-4"></i> zoltan.richard.szedeli@gmail.com
+            <a href="mailto:zoltan.richard.szedeli@gmail.com">
+              <i data-lucide="mail"></i> zoltan.richard.szedeli@gmail.com
             </a>
-            <a href="https://www.linkedin.com/in/szédeli-zoltán-richárd-37562a214" target="_blank" rel="noopener noreferrer" class="px-6 py-3.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 hover:bg-slate-800 flex items-center gap-2.5 transition-all">
-              <i data-lucide="linkedin" class="w-4 h-4 text-sky-400"></i> LinkedIn Profil
+            <a href="https://www.linkedin.com/in/szédeli-zoltán-richárd-37562a214" target="_blank" rel="noopener noreferrer">
+              <i data-lucide="external-link"></i> LinkedIn Profil
             </a>
           </div>
         </div>
       </div>
-    </section>
+    </section><dialog id="hermes-demo" aria-labelledby="demo-title">
+<div class="demo-header"><div><p class="demo-label">HERMES AI · INTERAKTÍV BEMUTATÓ</p><h2 id="demo-title">Vendégasszisztens</h2></div><button type="button" class="demo-icon" id="demo-close" aria-label="Bemutató bezárása" title="Bezárás">×</button></div>
+<p class="demo-disclaimer"><span class="demo-dot" aria-hidden="true"></span> Szimulált demó · A beszélgetés csak ebben az ablakban él. Valódi értesítés nem indul.</p>
+<div class="demo-chat"><div class="demo-conversation-head"><span id="demo-case">Vendégasszisztens</span><button type="button" class="demo-restart" id="demo-reset">Újrakezdés ↻</button></div>
+<ol class="demo-progress" aria-label="A bemutató lépései"><li data-demo-step="0" aria-current="step">1. Probléma</li><li data-demo-step="1">2. Pontosítás</li><li data-demo-step="2">3. Mintajegy</li></ol>
+<div class="demo-examples" id="demo-examples"><p>Válassz egy példát, vagy írd le a saját problémádat.</p><div><button type="button" data-demo-example="Nem működik a Wi-Fi.">Wi-Fi hiba ↗</button><button type="button" data-demo-example="A klíma nem hűt.">Klíma nem hűt ↗</button><button type="button" data-demo-example="Nem folyik le a víz a zuhanyban.">Lefolyó eldugult ↗</button></div></div>
+<div id="demo-messages" role="log" aria-live="polite" aria-relevant="additions"></div>
+<div id="demo-quick-replies" class="demo-quick-replies" aria-label="Javasolt következő lépések"></div>
+<div class="demo-controls"><p id="demo-state" role="status"></p><form id="demo-input"><input id="demo-question" type="text" maxlength="2000" autocomplete="off" placeholder="Például: a hálózat látszik, de nincs internet…" aria-label="Üzenet a vendégasszisztensnek" required><button type="submit" class="primary" aria-label="Üzenet küldése" title="Küldés">↑</button></form><p class="demo-hint">Enter: küldés · Újrakezdés: beszélgetés törlése</p></div></div>
+</dialog>
+</main><footer class="wrap"><p>© 2026 Szédeli Zoltán Richárd. Minden jog fenntartva.</p><a href="#bemutatkozas" aria-label="Vissza az oldal tetejére" title="Vissza az oldal tetejére"><i data-lucide="arrow-up-right"></i></a></footer><script>
+document.addEventListener('DOMContentLoaded', () => {
+(() => {
+  const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (!reduced) {
+    document.body.classList.add('booting');
+    setTimeout(() => document.body.classList.remove('booting'), 1850);
+  }
+  try { window.lucide?.createIcons(); } catch (_) { /* Text links remain usable. */ }
+  const toggle = document.getElementById('menu-toggle');
+  const nav = document.getElementById('navigation');
+  const closeMenu = () => {
+    nav.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-label', 'Menü megnyitása');
+  };
+  toggle.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+    toggle.setAttribute('aria-label', open ? 'Menü bezárása' : 'Menü megnyitása');
+  });
+  nav.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+  document.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && nav.classList.contains('open')) { closeMenu(); toggle.focus(); }
+  });
+  matchMedia('(min-width: 761px)').addEventListener('change', closeMenu);
+  if (!reduced && 'IntersectionObserver' in window) {
+    const observer = new IntersectionObserver(entries => entries.forEach(entry => {
+      if (entry.isIntersecting) { entry.target.classList.add('reveal-ready'); observer.unobserve(entry.target); }
+    }), { threshold: .08 });
+    document.querySelectorAll('.focus-row,.project-row,.career-row,.degree').forEach(node => observer.observe(node));
+  }
+})();
 
-    <!-- Footer -->
-    <footer class="py-8 border-t border-slate-900 text-center text-sm text-slate-500">
-      <p>© 2026 Szédeli Zoltán Richárd. Minden jog fenntartva.</p>
-    </footer>
+(() => {
+  const dialog = document.getElementById('hermes-demo');
+  if (!dialog) return;
+  let returnFocus;
+  document.querySelectorAll('[data-open-demo]').forEach(button => button.addEventListener('click', () => {
+    returnFocus = button;
+    if (!dialog.open) dialog.showModal();
+    document.body.classList.add('demo-open');
+    document.getElementById('demo-question').focus();
+  }));
+  document.getElementById('demo-close').addEventListener('click', () => dialog.close());
+  dialog.addEventListener('click', event => {
+    if (event.target !== dialog) return;
+    const r = dialog.getBoundingClientRect();
+    if (event.clientX < r.left || event.clientX > r.right || event.clientY < r.top || event.clientY > r.bottom) dialog.close();
+  });
+  dialog.addEventListener('close', () => {
+    document.body.classList.remove('demo-open');
+    returnFocus?.focus();
+  });
+})();
 
-  </div>
+(() => {
+  const form = document.getElementById('demo-input');
+  if (!form) return;
+  const input = document.getElementById('demo-question');
+  const log = document.getElementById('demo-messages');
+  const state = document.getElementById('demo-state');
+  const topic = document.getElementById('demo-case');
+  const normalize = value => value.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/[-–]/g, ' ').replace(/\s+/g, ' ').trim();
+  const issues = [
+    {name:'Wi-Fi / internet', match:/\b(wi\s?fi\w*|internet\w*|net|halozat\w*|router\w*)\b/, answer:'Sajnálom, hogy gond van az internettel. Látod a szállás Wi-Fi-hálózatát, vagy egyáltalán nem jelenik meg? Ha látszik, de nincs internet, próbáld a készülékeden ki-, majd bekapcsolni a Wi-Fi-t. Másik eszközön is jelentkezik a hiba?', follow:'A hálózat nem jelenik meg, a jelszót utasítja el, vagy csatlakozás után nincs internet? Ebből tudjuk eldönteni a következő lépést.'},
+    {name:'Légkondicionáló', match:/\b(klima\w*|legkondi\w*|legkondicionalo\w*|ac)\b/, answer:'Sajnálom, hogy a légkondicionálóval gond van. Egyáltalán nem kapcsol be, vagy működik, de nem hűt? Ellenőrizd a távirányítón a hűtés módot és a beállított hőmérsékletet. Látsz hibakódot a kijelzőn?', follow:'Van légáramlás a készülékből, és látszik hibakód? Írd meg, melyik szobában van a készülék; a pontos hibaleírás segít a karbantartónak.'},
+    {name:'Meleg víz', match:/\b(meleg\s?viz\w*|bojler\w*|boiler\w*)\b/, answer:'Sajnálom, hogy nincs megfelelő meleg víz. Minden csapnál hideg marad a víz, vagy csak a zuhanynál? A bojler burkolatát ne nyisd ki; írd meg, mióta tapasztalod a problémát.', follow:'A mosdónál és a konyhai csapnál is ugyanaz történik? Ez segít elkülöníteni a helyi csaptelephibát a melegvíz-ellátás hibájától.'},
+    {name:'Víz / lefolyó', match:/\b(csopog\w*|szivarog\w*|dugul\w*|lefolyo\w*|csap\w*|zuhany\w*|wc\w*|viz\w*)\b/, answer:'Sajnálom a kellemetlenséget. Hol jelentkezik a vízzel kapcsolatos probléma: a csapnál, a zuhanynál vagy a WC-nél? Szivárog a víz, nem folyik le, vagy nincs vízellátás? Szivárgás vagy dugulás esetén egyelőre ne használd az érintett berendezést.', follow:'Írd meg a pontos helyet és azt, hogy folyamatosan jelentkezik-e a probléma. A leírás alapján vízszerelői vagy karbantartói segítségre lehet szükség.'},
+    {name:'Fűtés', match:/\b(futes\w*|radiator\w*|termosztat\w*|hideg)\b/, answer:'Sajnálom, hogy hideg van. Minden szobában jelentkezik, vagy csak az egyikben? Ellenőrizd a termosztát kijelzett és beállított hőmérsékletét, és írd meg ezeket az értékeket.', follow:'A radiátorok teljesen hidegek, vagy valamelyik melegszik? A kazánhoz és a vezetékekhez ne nyúlj; a tünetek pontosítása után szakember segítsége lehet szükséges.'},
+    {name:'Áram / világítás', match:/\b(aram\w*|villany\w*|lampa\w*|vilagitas\w*|konnektor\w*)\b/, answer:'Sajnálom a problémát. Az egész lakásban nincs áram, vagy csak egy lámpa, illetve eszköz nem működik? Ne bontsd meg a konnektort vagy az elektromos berendezést. Írd meg, pontosan mi érintett.', follow:'A többi helyiség világítása működik? Ha csak egy készülék érintett, annak nevét is írd meg, hogy célzottan lehessen továbbítani a hibát.'},
+    {name:'Bejutás / ajtó', match:/\b(ajto\w*|kulcs\w*|zar\w*|bejut\w*|belepo\w*|kod\w*)\b/, answer:'Sajnálom, hogy gond van a bejutással. A kapuval, a lakás ajtajával vagy a kulcsszéffel van probléma? Az ajtót ne erőltesd. Ebben a demóban nem látom a foglalásodat és nem tudok belépési kódot megadni; sürgős bejutási gondnál keresd a szállásadót a foglalási felületen.', follow:'A zár nem fordul, a kódot utasítja el, vagy hiányzik a kulcs? Belépési kódot ne írj ide; a tünet leírása elegendő.'},
+    {name:'Tisztaság / takarítás', match:/\b(kosz\w*|piszkos\w*|takarit\w*|torolkozo\w*|agynemu\w*|szemet\w*)\b/, answer:'Sajnálom a kellemetlenséget. Melyik helyiség vagy tárgy érintett, és takarításra vagy cserére lenne szükség? Írd meg azt is, mikor lenne alkalmas számodra a takarító érkezése.', follow:'Pontosan mit kellene kitakarítani vagy kicserélni? A kért időpontot a szállásadónak még vissza kell igazolnia; innen nem indult értesítés.'},
+    {name:'Zaj', match:/\b(zaj\w*|hangos\w*|szomszed\w*)\b/, answer:'Sajnálom, hogy a zaj zavarja a pihenésedet. A lakáson belül, a szomszédból vagy az utcáról hallatszik? Mióta tart? Folyamatos zavarás esetén a szállásadót érdemes értesíteni a foglalási felületen.', follow:'Melyik irányból jön a zaj, és most is tart? Ezekkel az információkkal a szállásadó célzottabban tud segíteni.'},
+    {name:'Háztartási készülék', match:/\b(huto\w*|mosogep\w*|mosogatogep\w*|suto\w*|mikro\w*|televizio\w*|tv|kavefozo\w*)\b/, answer:'Sajnálom, hogy a készülékkel gond van. Nem kapcsol be, leáll működés közben, vagy hibakódot mutat? Írd meg a készülék nevét és a kijelzőn látható jelzést. A burkolatát ne bontsd meg.', follow:'Mi történik közvetlenül a bekapcsolás után? Ha van hibakód, pontosan írd le; a típustól függ, mit jelent.'}
+  ];
+  let current = null;
+  let pending = null;
+  let ticket = null;
+  let messages = [];
+  let ticketSequence = 0;
+  const quickReplies = document.getElementById('demo-quick-replies');
+  const examples = document.getElementById('demo-examples');
+  const progress = step => document.querySelectorAll('[data-demo-step]').forEach(item => {
+    const active = Number(item.dataset.demoStep) === step;
+    item.classList.toggle('active', active);
+    if (active) item.setAttribute('aria-current', 'step');
+    else item.removeAttribute('aria-current');
+  });
+  const detailAnswer = q => {
+    if (current?.name === 'Wi-Fi / internet') {
+      if (/jelszo/.test(q)) return 'Ha a Wi-Fi a jelszót utasítja el, ellenőrizd a foglaláshoz kapott hálózatnevet és a kis- és nagybetűket. Jelszót ne írj ide. Ha a kapott adatokkal sem csatlakozik, kérj ellenőrzött Wi-Fi-adatokat a szállásadótól.';
+      if (/nem jelenik|nem lat|nem talal/.test(q)) return 'Ha a hálózat nem jelenik meg, nézd meg, másik készülék látja-e. Ha egyik sem látja, a szállásadó segítségével kell ellenőrizni a hálózati eszközt. A router gyári visszaállítását ne indítsd el.';
+      if (/nincs internet|masik eszkozon|egyik eszkozon|tovabbra/.test(q)) return 'A leírás alapján a kapcsolat hibáját érdemes karbantartónak ellenőriznie. A demóban készíthetsz egy mintajegyet a beszélgetés összefoglalásával. Ez csak itt jelenik meg; nem küld értesítést.';
+    }
+    if (current?.name === 'Légkondicionáló' && /nem hut|meleg(et)? fuj/.test(q)) return 'Ha a klíma működik, de nem hűt, állítsd hűtés módra, a szobahőmérsékletnél alacsonyabb célhőmérséklettel, és csukd be az ablakokat. Ha ezután sem javul, írd meg a kijelzett hibakódot, ha van. Innen nem küldtem karbantartási értesítést.';
+    if (current?.name === 'Víz / lefolyó' && /dugul|nem folyik le/.test(q)) return 'Dugulásnál egyelőre ne engedj több vizet az érintett lefolyóba, hogy ne folyjon túl. Ne keverj tisztítószereket. A mosdó, a zuhany vagy a WC érintett? A szállásadótól vízszerelői segítséget érdemes kérni.';
+    return null;
+  };
+  const respond = message => {
+    const q = normalize(message);
+    if (/^(koszonom|koszi|rendben|oke|ok)[!. ]*$/.test(q)) return 'Szívesen! Írd meg, ha még fennáll a probléma, vagy másban is segítségre van szükséged.';
+    if (/^(megoldodott|megjavult|mar mukodik|minden rendben)[!. ]*$/.test(q)) { current = null; ticket = null; messages = []; topic.textContent = 'Megoldódott'; progress(0); return 'Örülök, hogy megoldódott! Válassz egy új példát, vagy írj egy másik problémát.'; }
+    let matches = issues.filter(issue => issue.match.test(q));
+    if (matches.length) {
+      if (matches.some(issue => issue.name === 'Meleg víz')) matches = matches.filter(issue => issue.name !== 'Víz / lefolyó' && issue.name !== 'Fűtés');
+      const previous = current;
+      current = matches[0];
+      if (previous !== current) { ticket = null; messages = [message]; }
+      topic.textContent = matches.map(issue => issue.name).join(' · ');
+      return matches.length === 1 ? detailAnswer(q) || (previous === current ? current.follow : current.answer) : matches.map(issue => previous === issue ? issue.follow : issue.answer).join('\n\n');
+    }
+    if (current && detailAnswer(q)) return detailAnswer(q);
+    if (current && /\b(nem|igen|mind|egyik|masik|ugyan|tovabbra|meg mindig|kiprobaltam|ellenoriztem|hibakod\w*|bekapcsol\w*|kijelzo\w*)\b/.test(q)) return current.follow;
+    if (/^(szia|hello|jo napot)[!. ]*$/.test(q)) return 'Szia! Miben segíthetek a szálláson? Írd le, mit tapasztalsz.';
+    return 'Melyik eszközzel vagy a szállás melyik részével van gond, és pontosan mi történik? Írd le például, hogy nem kapcsol be, hibajelzést mutat, vagy valami hiányzik. A leírás alapján tudok célzottan segíteni.';
+  };
+  const append = (role, text, user = false) => {
+    const box = document.createElement('div');
+    box.className = 'demo-message ' + (user ? 'user' : 'agent-answer');
+    const who = document.createElement('strong'); who.textContent = role;
+    const p = document.createElement('p'); p.textContent = text;
+    box.append(who, p); log.append(box);
+    while (log.children.length > 40) log.firstElementChild.remove();
+    log.scrollTop = log.scrollHeight;
+  };
+  const createTicket = () => {
+    if (!current || pending !== null || ticket) return;
+    ticket = 'DEMO-' + String(++ticketSequence).padStart(3, '0');
+    const card = document.createElement('section');
+    card.className = 'demo-ticket';
+    const title = document.createElement('strong'); title.textContent = 'Mintajegy elkészült · ' + ticket;
+    const detail = document.createElement('p'); detail.textContent = current.name + '\n' + messages.slice(-4).join('\n');
+    const note = document.createElement('small'); note.textContent = 'Szimulált állapot: karbantartói ellenőrzésre vár. Valódi jegy nem jött létre, értesítés nem indult.';
+    card.append(title, detail, note); log.append(card); log.scrollTop = log.scrollHeight;
+    topic.textContent = current.name + ' · ' + ticket;
+    state.textContent = 'A bemutató folyamatát végigpróbáltad.';
+    progress(2); renderReplies();
+  };
+  const renderReplies = () => {
+    quickReplies.replaceChildren();
+    examples.hidden = !!current;
+    if (!current) return;
+    const presets = {
+      'Wi-Fi / internet': ['A hálózat látszik, de nincs internet.', 'A hálózat nem jelenik meg.', 'A jelszót utasítja el.'],
+      'Légkondicionáló': ['Működik, de nem hűt.', 'Egyáltalán nem kapcsol be.'],
+      'Víz / lefolyó': ['A zuhanyban nem folyik le a víz.', 'Szivárog a víz a csapnál.'],
+      'Meleg víz': ['Minden csapnál hideg a víz.', 'Csak a zuhanynál jelentkezik.']
+    };
+    const addButton = (label, action, primary = false) => {
+      const button = document.createElement('button'); button.type = 'button'; button.textContent = label;
+      button.disabled = pending !== null;
+      if (primary) button.className = 'primary';
+      button.addEventListener('click', action); quickReplies.append(button);
+    };
+    if (!ticket) {
+      if (messages.length < 2) (presets[current.name] || ['Továbbra is fennáll a probléma.']).forEach(label => addButton(label, () => send(label)));
+      addButton('Mintajegy készítése', createTicket, true);
+    }
+    addButton('Megoldódott', () => send('Megoldódott'));
+  };
+  const reset = () => {
+    clearTimeout(pending); pending = null; current = null; ticket = null; messages = [];
+    form.querySelector('button').disabled = false;
+    log.removeAttribute('aria-busy'); log.replaceChildren();
+    input.value = ''; state.textContent = ''; topic.textContent = 'Vendégasszisztens';
+    append('Vendégasszisztens · demó', 'Szia! Segítek pontosítani a problémát, és megmutatom, hogyan készülne belőle hibajegy. Válassz egy példát, vagy írd le, mit tapasztalsz.');
+    progress(0); renderReplies();
+  };
+  document.getElementById('demo-reset').addEventListener('click', () => { reset(); input.focus(); });
+  const send = question => {
+    question = question.trim().slice(0, 2000);
+    if (!question || pending !== null) return;
+    append('Vendég', question, true); input.value = '';
+    messages.push(question); if (messages.length > 8) messages.shift();
+    state.textContent = 'Válasz készül…'; log.setAttribute('aria-busy', 'true');
+    form.querySelector('button').disabled = true;
+    pending = setTimeout(() => {
+      append('Vendégasszisztens · demó', respond(question)); pending = null;
+      state.textContent = ''; log.removeAttribute('aria-busy');
+      form.querySelector('button').disabled = false;
+      if (current) progress(ticket ? 2 : 1);
+      renderReplies(); input.focus();
+    }, 300);
+    renderReplies();
+  };
+  form.addEventListener('submit', event => { event.preventDefault(); send(input.value); });
+  document.querySelectorAll('[data-demo-example]').forEach(button => button.addEventListener('click', () => send(button.dataset.demoExample)));
+  reset();
+})();
 
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const preloader = document.getElementById('preloader');
-      const mainContent = document.getElementById('main-content');
-      const body = document.getElementById('app-body');
-
-      lucide.createIcons();
-
-      setTimeout(() => {
-        preloader.classList.add('fade-out');
-        mainContent.classList.remove('opacity-0');
-        mainContent.classList.add('opacity-100');
-        body.classList.remove('overflow-y-hidden');
-
-        setTimeout(() => {
-          preloader.remove();
-        }, 600);
-      }, 1500);
+(() => {
+  const calendar = document.querySelector('.career-calendar');
+  if (!calendar) return;
+  const monthIndex = value => {
+    const [year, month] = value.split('-').map(Number);
+    return year * 12 + month - 1;
+  };
+  const origin = monthIndex('2020-12');
+  const today = new Date();
+  const end = Math.max(today.getFullYear() * 12 + today.getMonth() + 1, monthIndex('2026-10'));
+  const span = end - origin;
+  const percentage = month => Math.max(0, Math.min(100, (month - origin) / span * 100));
+  const axis = calendar.querySelector('.career-calendar-axis');
+  axis.replaceChildren();
+  const ticks = [];
+  for (let year = 2021; year <= Math.floor((end - 1) / 12); year++) {
+    const position = percentage(year * 12);
+    const label = document.createElement('span');
+    label.textContent = year;
+    label.style.left = position + '%';
+    axis.append(label);
+    ticks.push(position);
+  }
+  calendar.querySelectorAll('.career-event').forEach(event => {
+    const from = percentage(monthIndex(event.dataset.careerStart));
+    const to = percentage(event.dataset.careerEnd ? monthIndex(event.dataset.careerEnd) : end);
+    event.style.setProperty('--career-start', from + '%');
+    event.style.setProperty('--career-length', Math.max(0, to - from) + '%');
+    const lane = event.querySelector('.career-lane');
+    ticks.forEach(position => {
+      const line = document.createElement('span');
+      line.className = 'career-grid-line';
+      line.style.left = position + '%';
+      lane.prepend(line);
     });
-  </script>
-</body>
-</html>
+  });
+})();
+
+});
+</script>
+</body></html>
